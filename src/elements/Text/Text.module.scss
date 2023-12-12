@@ -3,7 +3,6 @@
 .text {
   color: currentColor;
   word-break: break-word;
-  font-family: "Roboto";
 
   &_title {
     font-size: 44px;
@@ -12,8 +11,9 @@
   }
 
   &_button {
-    font-size: 18px;
-    line-height: 1;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.2;
   }
 
   &_p-20 {

@@ -1,0 +1,15 @@
+@import "src/styles/variables.scss";
+
+.button {
+  background: transparent;
+  border: none;
+  &_contained {
+    padding: 0.75em 1.5em;
+    background: $button-gradient;
+    border-radius: 1em;
+    filter: drop-shadow($box-shadow);
+  }
+  &_text {
+    padding: 0.2em;
+  }
+}
