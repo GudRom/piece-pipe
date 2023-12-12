@@ -1,15 +1,29 @@
-import { FC } from "react";
+import classNames from "classnames";
+import { FC, SVGAttributes } from "react";
+import styles from "./AddCircledIcon.module.scss";
 
-interface Props {}
+export type IconProps = SVGAttributes<SVGElement> & {
+  className?: string;
+  color?: "primary" | "secondary" | "accent";
+};
 
-const AddCircledIcon: FC<Props> = () => {
+const AddCircledIcon: FC<IconProps> = ({ className, color, width, height, ...props }) => {
+  const classIcon = classNames(
+    styles.addIcon,
+    {
+      [styles[`checkIcon_${color}`]]: color,
+    },
+    className
+  );
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="58"
-      height="58"
+      width={width ?? "58"}
+      height={height ?? "58"}
       viewBox="0 0 58 58"
       fill="none"
+      className={classIcon}
+      {...props}
     >
       <g filter="url(#filter0_d_15_1038)">
         <path

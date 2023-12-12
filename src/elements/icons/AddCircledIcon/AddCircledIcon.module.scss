@@ -1,0 +1,17 @@
+@import "src/styles/variables.scss";
+
+.addIcon {
+  fill: currentColor;
+
+  &_primary > path {
+    fill: $likegold;
+  }
+
+  &_secondary > path {
+    fill: $intimateblack;
+  }
+
+  &_accent > path {
+    fill: $sexyred;
+  }
+}

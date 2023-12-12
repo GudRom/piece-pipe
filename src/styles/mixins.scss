@@ -6,6 +6,12 @@
 //   }
 // }
 
+@mixin centerFlex() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @mixin _600 {
   @media (max-width: 600px) {
     @content;

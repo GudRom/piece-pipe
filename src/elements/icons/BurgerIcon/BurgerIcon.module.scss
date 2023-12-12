@@ -1,0 +1,17 @@
+@import "src/styles/variables.scss";
+
+.burgerIcon {
+  fill: currentColor;
+
+  &_primary > path {
+    fill: $flesh;
+  }
+
+  &_secondary > path {
+    fill: $intimateblack;
+  }
+
+  &_accent > path {
+    fill: $sexyred;
+  }
+}

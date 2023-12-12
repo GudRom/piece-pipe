@@ -1,0 +1,11 @@
+@import "src/styles/variables.scss", "src/styles/mixins.scss";
+
+.iconButton {
+  background-color: transparent;
+  padding: 0.5em;
+  border: none;
+  @include centerFlex();
+  &:disabled {
+    opacity: 0.5;
+  }
+}
