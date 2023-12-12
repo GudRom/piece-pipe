@@ -1,0 +1,19 @@
+// @mixin buttonHover($selector) {
+//   @media (hover: any-hover) {
+//     [selector]:hover {
+//       box-shadow: 0px 0px 2em 0px #fbbc81;
+//     }
+//   }
+// }
+
+@mixin _600 {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin _480 {
+  @media (max-width: 480px) {
+    @content;
+  }
+}

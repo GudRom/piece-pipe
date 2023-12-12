@@ -1,0 +1,840 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John Smith",
+      "avatar": "https://images.unsplash.com/photo-1701872182933-2774ca26399b?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEzfHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D"
+    },
+    {
+      "id": 2,
+      "name": "Emily Johnson",
+      "avatar": "https://images.unsplash.com/photo-1702017653546-e67a25511d7c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": 3,
+      "name": "Michael Williams",
+      "avatar": "https://images.unsplash.com/photo-1639090869991-632afb8a544c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDE5fHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D"
+    },
+    {
+      "id": 4,
+      "name": "Emma Jones",
+      "avatar": "https://images.unsplash.com/photo-1702017634883-8392c239ea2c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDQ0fHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D"
+    },
+    {
+      "id": 5,
+      "name": "Daniel Brown",
+      "avatar": "https://images.unsplash.com/photo-1488161628813-04466f872be2?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzN8fG1hbiUyMGFsb25lfGVufDB8fDB8fHwy"
+    },
+    {
+      "id": 6,
+      "name": "Olivia Davis",
+      "avatar": "https://images.unsplash.com/photo-1680193407523-ce7dab16e6f9?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDUxfHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D"
+    },
+    {
+      "id": 7,
+      "name": "Alexander Miller",
+      "avatar": "https://images.unsplash.com/photo-1621347311611-5754c01d1fd8?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjJ8fG1hbiUyMGFsb25lfGVufDB8fDB8fHwy"
+    },
+    {
+      "id": 8,
+      "name": "Sophia Garcia",
+      "avatar": "https://images.unsplash.com/photo-1594094808932-389a7932df10?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEzOXx0b3dKWkZza3BHZ3x8ZW58MHx8fHx8"
+    },
+    {
+      "id": 9,
+      "name": "William Rodriguez",
+      "avatar": "https://images.unsplash.com/photo-1609010697446-11f2155278f0?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjZ8fG1hbiUyMGFsb25lfGVufDB8fDB8fHwy"
+    },
+    {
+      "id": 10,
+      "name": "Ava Martinez",
+      "avatar": "https://images.unsplash.com/photo-1696416748833-0407ebea6047?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDExNnx0b3dKWkZza3BHZ3x8ZW58MHx8fHx8"
+    },
+    {
+      "id": 11,
+      "name": "James Hernandez",
+      "avatar": "https://images.unsplash.com/photo-1683874354203-4bc3484590a0?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDU4fHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D"
+    },
+    {
+      "id": 12,
+      "name": "Mia Lopez",
+      "avatar": "https://images.unsplash.com/photo-1623113611479-392ebf2f9e94?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDI0fHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D"
+    },
+    {
+      "id": 13,
+      "name": "Benjamin Lee",
+      "avatar": "https://images.unsplash.com/photo-1617196701537-7329482cc9fe?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDN8dG93SlpGc2twR2d8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": 14,
+      "name": "Charlotte Hill",
+      "avatar": "https://images.unsplash.com/photo-1699782855127-acd42190fc20?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDE3MHx0b3dKWkZza3BHZ3x8ZW58MHx8fHx8"
+    },
+    {
+      "id": 15,
+      "name": "Lucas Scott",
+      "avatar": "https://images.unsplash.com/photo-1621369164116-5acbcbd1d324?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjR8fG1hbiUyMGFsb25lfGVufDB8fDB8fHwy"
+    },
+    {
+      "id": 16,
+      "name": "Grace Murphy",
+      "avatar": "https://images.unsplash.com/photo-1603560723083-ef52b8597e2d?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDE0MXx0b3dKWkZza3BHZ3x8ZW58MHx8fHx8"
+    },
+    {
+      "id": 17,
+      "name": "Henry Ward",
+      "avatar": "https://images.unsplash.com/photo-1565312920580-4e604d7c3ee6?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDMyfHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D"
+    },
+    {
+      "id": 18,
+      "name": "Lily Rogers",
+      "avatar": "https://images.unsplash.com/photo-1526510747491-58f928ec870f?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDE0M3x0b3dKWkZza3BHZ3x8ZW58MHx8fHx8"
+    },
+    {
+      "id": 19,
+      "name": "Andrew Foster",
+      "avatar": "https://images.unsplash.com/photo-1701782447482-97a258fce973?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDd8dG93SlpGc2twR2d8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": 20,
+      "name": "Chloe Cooper",
+      "avatar": "https://images.unsplash.com/photo-1641155785005-592529a4391d?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDIwfHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D"
+    }
+  ],
+  "songs": [
+    {
+      "id": 1,
+      "name": "Shape of You",
+      "artist": "Ed Sheeran",
+      "duration": 233
+    },
+    {
+      "id": 2,
+      "name": "Bohemian Rhapsody",
+      "artist": "Queen",
+      "duration": 367
+    },
+    {
+      "id": 3,
+      "name": "Thinking Out Loud",
+      "artist": "Ed Sheeran",
+      "duration": 281
+    },
+    {
+      "id": 4,
+      "name": "Sugar",
+      "artist": "Maroon 5",
+      "duration": 235
+    },
+    {
+      "id": 5,
+      "name": "Can't Stop the Feeling!",
+      "artist": "Justin Timberlake",
+      "duration": 236
+    },
+    {
+      "id": 6,
+      "name": "Counting Stars",
+      "artist": "OneRepublic",
+      "duration": 257
+    },
+    {
+      "id": 7,
+      "name": "Rolling in the Deep",
+      "artist": "Adele",
+      "duration": 228
+    },
+    {
+      "id": 8,
+      "name": "Uptown Funk",
+      "artist": "Mark Ronson ft. Bruno Mars",
+      "duration": 270
+    },
+    {
+      "id": 9,
+      "name": "Somebody That I Used to Know",
+      "artist": "Gotye ft. Kimbra",
+      "duration": 244
+    },
+    {
+      "id": 10,
+      "name": "Closer",
+      "artist": "The Chainsmokers ft. Halsey",
+      "duration": 244
+    },
+    {
+      "id": 11,
+      "name": "Billie Jean",
+      "artist": "Michael Jackson",
+      "duration": 294
+    },
+    {
+      "id": 12,
+      "name": "A Thousand Years",
+      "artist": "Christina Perri",
+      "duration": 285
+    },
+    {
+      "id": 13,
+      "name": "Viva la Vida",
+      "artist": "Coldplay",
+      "duration": 242
+    },
+    {
+      "id": 14,
+      "name": "I Gotta Feeling",
+      "artist": "The Black Eyed Peas",
+      "duration": 297
+    },
+    {
+      "id": 15,
+      "name": "All of Me",
+      "artist": "John Legend",
+      "duration": 269
+    },
+    {
+      "id": 16,
+      "name": "Happy",
+      "artist": "Pharrell Williams",
+      "duration": 233
+    },
+    {
+      "id": 17,
+      "name": "Radioactive",
+      "artist": "Imagine Dragons",
+      "duration": 185
+    },
+    {
+      "id": 18,
+      "name": "Shake It Off",
+      "artist": "Taylor Swift",
+      "duration": 219
+    },
+    {
+      "id": 19,
+      "name": "Love Me Like You Do",
+      "artist": "Ellie Goulding",
+      "duration": 252
+    },
+    {
+      "id": 20,
+      "name": "Radio Ga Ga",
+      "artist": "Queen",
+      "duration": 345
+    },
+    {
+      "id": 21,
+      "name": "Firework",
+      "artist": "Katy Perry",
+      "duration": 227
+    },
+    {
+      "id": 22,
+      "name": "Take Me to Church",
+      "artist": "Hozier",
+      "duration": 241
+    },
+    {
+      "id": 23,
+      "name": "Fix You",
+      "artist": "Coldplay",
+      "duration": 294
+    },
+    {
+      "id": 24,
+      "name": "I Will Always Love You",
+      "artist": "Whitney Houston",
+      "duration": 273
+    },
+    {
+      "id": 25,
+      "name": "Hey, Soul Sister",
+      "artist": "Train",
+      "duration": 214
+    },
+    {
+      "id": 26,
+      "name": "Cheap Thrills",
+      "artist": "Sia",
+      "duration": 211
+    },
+    {
+      "id": 27,
+      "name": "Stronger (What Doesn't Kill You)",
+      "artist": "Kelly Clarkson",
+      "duration": 220
+    }
+  ],
+  "wigwams": [
+    {
+      "id": 1,
+      "name": "Пати на хате",
+      "ownerId": 1,
+      "maxSongForMember": 5,
+      "songs": [
+        {
+          "memberId": 2,
+          "song": {
+            "id": 1,
+            "name": "Shape of You",
+            "artist": "Ed Sheeran",
+            "duration": 233
+          }
+        },
+        {
+          "memberId": 2,
+          "song": {
+            "id": 27,
+            "name": "Stronger (What Doesn't Kill You)",
+            "artist": "Kelly Clarkson",
+            "duration": 220
+          }
+        },
+        {
+          "memberId": 2,
+          "song": {
+            "id": 23,
+            "name": "Fix You",
+            "artist": "Coldplay",
+            "duration": 294
+          }
+        },
+        {
+          "memberId": 3,
+          "song": {
+            "id": 26,
+            "name": "Cheap Thrills",
+            "artist": "Sia",
+            "duration": 211
+          }
+        },
+        {
+          "memberId": 3,
+          "song": {
+            "id": 20,
+            "name": "Radio Ga Ga",
+            "artist": "Queen",
+            "duration": 345
+          }
+        },
+        {
+          "memberId": 3,
+          "song": {
+            "id": 24,
+            "name": "I Will Always Love You",
+            "artist": "Whitney Houston",
+            "duration": 273
+          }
+        },
+        {
+          "memberId": 3,
+          "song": {
+            "id": 22,
+            "name": "Take Me to Church",
+            "artist": "Hozier",
+            "duration": 241
+          }
+        },
+        {
+          "memberId": 4,
+          "song": {
+            "id": 18,
+            "name": "Shake It Off",
+            "artist": "Taylor Swift",
+            "duration": 219
+          }
+        },
+        {
+          "memberId": 1,
+          "song": {
+            "id": 7,
+            "name": "Rolling in the Deep",
+            "artist": "Adele",
+            "duration": 228
+          }
+        },
+        {
+          "memberId": 1,
+          "song": {
+            "id": 2,
+            "name": "Bohemian Rhapsody",
+            "artist": "Queen",
+            "duration": 367
+          }
+        }
+      ],
+      "members": [
+        {
+          "id": 1,
+          "name": "John Smith",
+          "avatar": "https://images.unsplash.com/photo-1701872182933-2774ca26399b?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEzfHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D"
+        },
+        {
+          "id": 2,
+          "name": "Emily Johnson",
+          "avatar": "https://images.unsplash.com/photo-1702017653546-e67a25511d7c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        },
+        {
+          "id": 3,
+          "name": "Michael Williams",
+          "avatar": "https://images.unsplash.com/photo-1639090869991-632afb8a544c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDE5fHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D"
+        },
+        {
+          "id": 4,
+          "name": "Emma Jones",
+          "avatar": "https://images.unsplash.com/photo-1702017634883-8392c239ea2c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDQ0fHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D"
+        },
+        {
+          "id": 5,
+          "name": "Daniel Brown",
+          "avatar": "https://images.unsplash.com/photo-1488161628813-04466f872be2?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzN8fG1hbiUyMGFsb25lfGVufDB8fDB8fHwy"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Вечер на озеро Комо, 10.07.2024",
+      "ownerId": 1,
+      "maxSongForMember": 5,
+      "songs": [
+        {
+          "memberId": 7,
+          "song": {
+            "id": 1,
+            "name": "Shape of You",
+            "artist": "Ed Sheeran",
+            "duration": 233
+          }
+        },
+        {
+          "memberId": 6,
+          "song": {
+            "id": 27,
+            "name": "Stronger (What Doesn't Kill You)",
+            "artist": "Kelly Clarkson",
+            "duration": 220
+          }
+        },
+        {
+          "memberId": 8,
+          "song": {
+            "id": 23,
+            "name": "Fix You",
+            "artist": "Coldplay",
+            "duration": 294
+          }
+        },
+        {
+          "memberId": 8,
+          "song": {
+            "id": 26,
+            "name": "Cheap Thrills",
+            "artist": "Sia",
+            "duration": 211
+          }
+        },
+        {
+          "memberId": 9,
+          "song": {
+            "id": 20,
+            "name": "Radio Ga Ga",
+            "artist": "Queen",
+            "duration": 345
+          }
+        },
+        {
+          "memberId": 10,
+          "song": {
+            "id": 24,
+            "name": "I Will Always Love You",
+            "artist": "Whitney Houston",
+            "duration": 273
+          }
+        },
+        {
+          "memberId": 11,
+          "song": {
+            "id": 22,
+            "name": "Take Me to Church",
+            "artist": "Hozier",
+            "duration": 241
+          }
+        },
+        {
+          "memberId": 12,
+          "song": {
+            "id": 18,
+            "name": "Shake It Off",
+            "artist": "Taylor Swift",
+            "duration": 219
+          }
+        },
+        {
+          "memberId": 1,
+          "song": {
+            "id": 7,
+            "name": "Rolling in the Deep",
+            "artist": "Adele",
+            "duration": 228
+          }
+        },
+        {
+          "memberId": 1,
+          "song": {
+            "id": 2,
+            "name": "Bohemian Rhapsody",
+            "artist": "Queen",
+            "duration": 367
+          }
+        }
+      ],
+      "members": [
+        {
+          "id": 1,
+          "name": "John Smith",
+          "avatar": "https://images.unsplash.com/photo-1701872182933-2774ca26399b?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEzfHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D"
+        },
+        {
+          "id": 6,
+          "name": "Olivia Davis",
+          "avatar": "https://images.unsplash.com/photo-1680193407523-ce7dab16e6f9?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDUxfHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D"
+        },
+        {
+          "id": 7,
+          "name": "Alexander Miller",
+          "avatar": "https://images.unsplash.com/photo-1621347311611-5754c01d1fd8?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjJ8fG1hbiUyMGFsb25lfGVufDB8fDB8fHwy"
+        },
+        {
+          "id": 8,
+          "name": "Sophia Garcia",
+          "avatar": "https://images.unsplash.com/photo-1594094808932-389a7932df10?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEzOXx0b3dKWkZza3BHZ3x8ZW58MHx8fHx8"
+        },
+        {
+          "id": 9,
+          "name": "William Rodriguez",
+          "avatar": "https://images.unsplash.com/photo-1609010697446-11f2155278f0?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjZ8fG1hbiUyMGFsb25lfGVufDB8fDB8fHwy"
+        },
+        {
+          "id": 10,
+          "name": "Ava Martinez",
+          "avatar": "https://images.unsplash.com/photo-1696416748833-0407ebea6047?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDExNnx0b3dKWkZza3BHZ3x8ZW58MHx8fHx8"
+        },
+        {
+          "id": 11,
+          "name": "James Hernandez",
+          "avatar": "https://images.unsplash.com/photo-1683874354203-4bc3484590a0?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDU4fHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D"
+        },
+        {
+          "id": 12,
+          "name": "Mia Lopez",
+          "avatar": "https://images.unsplash.com/photo-1623113611479-392ebf2f9e94?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDI0fHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D"
+        },
+        {
+          "id": 13,
+          "name": "Benjamin Lee",
+          "avatar": "https://images.unsplash.com/photo-1617196701537-7329482cc9fe?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDN8dG93SlpGc2twR2d8fGVufDB8fHx8fA%3D%3D"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Вечера на хуторе близ Диканьки",
+      "ownerId": 1,
+      "maxSongForMember": 5,
+      "songs": [
+        {
+          "memberId": 2,
+          "song": {
+            "id": 1,
+            "name": "Shape of You",
+            "artist": "Ed Sheeran",
+            "duration": 233
+          }
+        },
+        {
+          "memberId": 2,
+          "song": {
+            "id": 27,
+            "name": "Stronger (What Doesn't Kill You)",
+            "artist": "Kelly Clarkson",
+            "duration": 220
+          }
+        },
+        {
+          "memberId": 2,
+          "song": {
+            "id": 23,
+            "name": "Fix You",
+            "artist": "Coldplay",
+            "duration": 294
+          }
+        },
+        {
+          "memberId": 3,
+          "song": {
+            "id": 26,
+            "name": "Cheap Thrills",
+            "artist": "Sia",
+            "duration": 211
+          }
+        },
+        {
+          "memberId": 3,
+          "song": {
+            "id": 20,
+            "name": "Radio Ga Ga",
+            "artist": "Queen",
+            "duration": 345
+          }
+        },
+        {
+          "memberId": 3,
+          "song": {
+            "id": 24,
+            "name": "I Will Always Love You",
+            "artist": "Whitney Houston",
+            "duration": 273
+          }
+        },
+        {
+          "memberId": 3,
+          "song": {
+            "id": 22,
+            "name": "Take Me to Church",
+            "artist": "Hozier",
+            "duration": 241
+          }
+        },
+        {
+          "memberId": 4,
+          "song": {
+            "id": 18,
+            "name": "Shake It Off",
+            "artist": "Taylor Swift",
+            "duration": 219
+          }
+        },
+        {
+          "memberId": 1,
+          "song": {
+            "id": 7,
+            "name": "Rolling in the Deep",
+            "artist": "Adele",
+            "duration": 228
+          }
+        },
+        {
+          "memberId": 1,
+          "song": {
+            "id": 2,
+            "name": "Bohemian Rhapsody",
+            "artist": "Queen",
+            "duration": 367
+          }
+        }
+      ],
+      "members": [
+        {
+          "id": 1,
+          "name": "John Smith",
+          "avatar": "https://images.unsplash.com/photo-1701872182933-2774ca26399b?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEzfHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D"
+        },
+        {
+          "id": 2,
+          "name": "Emily Johnson",
+          "avatar": "https://images.unsplash.com/photo-1702017653546-e67a25511d7c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        },
+        {
+          "id": 3,
+          "name": "Michael Williams",
+          "avatar": "https://images.unsplash.com/photo-1639090869991-632afb8a544c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDE5fHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D"
+        },
+        {
+          "id": 4,
+          "name": "Emma Jones",
+          "avatar": "https://images.unsplash.com/photo-1702017634883-8392c239ea2c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDQ0fHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D"
+        },
+        {
+          "id": 5,
+          "name": "Daniel Brown",
+          "avatar": "https://images.unsplash.com/photo-1488161628813-04466f872be2?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzN8fG1hbiUyMGFsb25lfGVufDB8fDB8fHwy"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Туса dump the heads",
+      "ownerId": 1,
+      "maxSongForMember": 5,
+      "songs": [
+        {
+          "memberId": 7,
+          "song": {
+            "id": 1,
+            "name": "Shape of You",
+            "artist": "Ed Sheeran",
+            "duration": 233
+          }
+        },
+        {
+          "memberId": 6,
+          "song": {
+            "id": 27,
+            "name": "Stronger (What Doesn't Kill You)",
+            "artist": "Kelly Clarkson",
+            "duration": 220
+          }
+        },
+        {
+          "memberId": 8,
+          "song": {
+            "id": 23,
+            "name": "Fix You",
+            "artist": "Coldplay",
+            "duration": 294
+          }
+        },
+        {
+          "memberId": 8,
+          "song": {
+            "id": 26,
+            "name": "Cheap Thrills",
+            "artist": "Sia",
+            "duration": 211
+          }
+        },
+        {
+          "memberId": 9,
+          "song": {
+            "id": 20,
+            "name": "Radio Ga Ga",
+            "artist": "Queen",
+            "duration": 345
+          }
+        },
+        {
+          "memberId": 10,
+          "song": {
+            "id": 24,
+            "name": "I Will Always Love You",
+            "artist": "Whitney Houston",
+            "duration": 273
+          }
+        },
+        {
+          "memberId": 11,
+          "song": {
+            "id": 22,
+            "name": "Take Me to Church",
+            "artist": "Hozier",
+            "duration": 241
+          }
+        },
+        {
+          "memberId": 12,
+          "song": {
+            "id": 18,
+            "name": "Shake It Off",
+            "artist": "Taylor Swift",
+            "duration": 219
+          }
+        },
+        {
+          "memberId": 1,
+          "song": {
+            "id": 7,
+            "name": "Rolling in the Deep",
+            "artist": "Adele",
+            "duration": 228
+          }
+        },
+        {
+          "memberId": 1,
+          "song": {
+            "id": 2,
+            "name": "Bohemian Rhapsody",
+            "artist": "Queen",
+            "duration": 367
+          }
+        }
+      ],
+      "members": [
+        {
+          "id": 1,
+          "name": "John Smith",
+          "avatar": "https://images.unsplash.com/photo-1701872182933-2774ca26399b?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEzfHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D"
+        },
+        {
+          "id": 6,
+          "name": "Olivia Davis",
+          "avatar": "https://images.unsplash.com/photo-1680193407523-ce7dab16e6f9?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDUxfHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D"
+        },
+        {
+          "id": 7,
+          "name": "Alexander Miller",
+          "avatar": "https://images.unsplash.com/photo-1621347311611-5754c01d1fd8?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjJ8fG1hbiUyMGFsb25lfGVufDB8fDB8fHwy"
+        },
+        {
+          "id": 8,
+          "name": "Sophia Garcia",
+          "avatar": "https://images.unsplash.com/photo-1594094808932-389a7932df10?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEzOXx0b3dKWkZza3BHZ3x8ZW58MHx8fHx8"
+        },
+        {
+          "id": 9,
+          "name": "William Rodriguez",
+          "avatar": "https://images.unsplash.com/photo-1609010697446-11f2155278f0?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjZ8fG1hbiUyMGFsb25lfGVufDB8fDB8fHwy"
+        },
+        {
+          "id": 10,
+          "name": "Ava Martinez",
+          "avatar": "https://images.unsplash.com/photo-1696416748833-0407ebea6047?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDExNnx0b3dKWkZza3BHZ3x8ZW58MHx8fHx8"
+        },
+        {
+          "id": 11,
+          "name": "James Hernandez",
+          "avatar": "https://images.unsplash.com/photo-1683874354203-4bc3484590a0?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDU4fHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D"
+        },
+        {
+          "id": 12,
+          "name": "Mia Lopez",
+          "avatar": "https://images.unsplash.com/photo-1623113611479-392ebf2f9e94?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDI0fHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D"
+        },
+        {
+          "id": 13,
+          "name": "Benjamin Lee",
+          "avatar": "https://images.unsplash.com/photo-1617196701537-7329482cc9fe?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDN8dG93SlpGc2twR2d8fGVufDB8fHx8fA%3D%3D"
+        }
+      ]
+    }
+  ],
+  "invites": [
+    {
+      "id": 1,
+      "name": "НГ с братками",
+      "from": {
+        "id": 19,
+        "name": "Andrew Foster",
+        "avatar": "https://images.unsplash.com/photo-1701782447482-97a258fce973?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDd8dG93SlpGc2twR2d8fGVufDB8fHx8fA%3D%3D"
+      },
+      "to": {
+        "id": 1,
+        "name": "John Smith",
+        "avatar": "https://images.unsplash.com/photo-1701872182933-2774ca26399b?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEzfHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Секс на пляже",
+      "from": {
+        "id": 10,
+        "name": "Ava Martinez",
+        "avatar": "https://images.unsplash.com/photo-1696416748833-0407ebea6047?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDExNnx0b3dKWkZza3BHZ3x8ZW58MHx8fHx8"
+      },
+      "to": {
+        "id": 1,
+        "name": "John Smith",
+        "avatar": "https://images.unsplash.com/photo-1701872182933-2774ca26399b?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEzfHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D"
+      }
+    }
+  ]
+}

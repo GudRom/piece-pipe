@@ -1,0 +1,12 @@
+@import "src/styles/variables.scss", "src/styles/mixins.scss";
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+  padding: 0.6em 1.25em;
+  font-size: 1rem;
+  background: $button-gradient;
+  box-shadow: $box-shadow;
+}
