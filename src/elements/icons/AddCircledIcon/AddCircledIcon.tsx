@@ -7,11 +7,17 @@ export type IconProps = SVGAttributes<SVGElement> & {
   color?: "primary" | "secondary" | "accent";
 };
 
-const AddCircledIcon: FC<IconProps> = ({ className, color, width, height, ...props }) => {
+const AddCircledIcon: FC<IconProps> = ({
+  className,
+  color,
+  width,
+  height,
+  ...props
+}) => {
   const classIcon = classNames(
-    styles.addIcon,
+    styles.icon,
     {
-      [styles[`checkIcon_${color}`]]: color,
+      [styles[`icon_${color}`]]: color,
     },
     className
   );

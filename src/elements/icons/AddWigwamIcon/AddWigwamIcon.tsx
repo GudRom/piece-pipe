@@ -1,16 +1,31 @@
+import classNames from "classnames";
+import { IconProps } from "elements/icons/AddCircledIcon";
 import { FC } from "react";
+import styles from "./AddWigwamIcon.module.scss";
 
-
-interface Props {}
-
-const AddVigvamIcon: FC<Props> = () => {
+const AddVigvamIcon: FC<IconProps> = ({
+  className,
+  color,
+  width,
+  height,
+  ...props
+}) => {
+  const classIcon = classNames(
+    styles.icon,
+    {
+      [styles[`icon_${color}`]]: color,
+    },
+    className
+  );
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="38"
-      height="38"
+      width={width ?? "38"}
+      height={height ?? "38"}
       viewBox="0 0 38 38"
       fill="none"
+      className={classIcon}
+      {...props}
     >
       <g filter="url(#filter0_d_14_126)">
         <path

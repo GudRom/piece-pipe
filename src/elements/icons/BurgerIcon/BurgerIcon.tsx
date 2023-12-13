@@ -11,9 +11,9 @@ const BurgerIcon: FC<IconProps> = ({
   ...props
 }) => {
   const classIcon = classNames(
-    styles.burgerIcon,
+    styles.icon,
     {
-      [styles[`checkIcon_${color}`]]: color,
+      [styles[`icon_${color}`]]: color,
     },
     className
   );

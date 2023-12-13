@@ -1,15 +1,31 @@
+import classNames from "classnames";
+import { IconProps } from "elements/icons/AddCircledIcon";
 import { FC } from "react";
+import styles from "./SearchIcon.module.scss";
 
-interface Props {}
-
-const SearchIcon: FC<Props> = () => {
+const SearchIcon: FC<IconProps> = ({
+  className,
+  color,
+  width,
+  height,
+  ...props
+}) => {
+  const classIcon = classNames(
+    styles.icon,
+    {
+      [styles[`icon_${color}`]]: color,
+    },
+    className
+  );
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="33"
-      height="37"
+      width={width ?? "33"}
+      height={height ?? "37"}
       viewBox="0 0 33 37"
       fill="none"
+      className={classIcon}
+      {...props}
     >
       <g filter="url(#filter0_d_15_433)">
         <path
