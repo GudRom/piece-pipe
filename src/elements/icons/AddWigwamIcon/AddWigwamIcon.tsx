@@ -3,7 +3,7 @@ import { IconProps } from "elements/icons/AddCircledIcon";
 import { FC } from "react";
 import styles from "./AddWigwamIcon.module.scss";
 
-const AddVigvamIcon: FC<IconProps> = ({
+const AddWigwamIcon: FC<IconProps> = ({
   className,
   color,
   width,
@@ -80,4 +80,4 @@ const AddVigvamIcon: FC<IconProps> = ({
   );
 };
 
-export default AddVigvamIcon;
+export default AddWigwamIcon;
