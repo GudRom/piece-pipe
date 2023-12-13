@@ -8,4 +8,9 @@
   &:disabled {
     opacity: 0.5;
   }
+  &:active,
+  &:focus {
+    border: none;
+    outline: none;
+  }
 }
