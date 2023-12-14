@@ -1,0 +1,16 @@
+@import "src/styles/variables.scss";
+.progress {
+  border: 1px solid $flesh;
+  width: 80vw;
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  filter: drop-shadow(2px 2px 5px #ffe7cd);
+
+  &__line {
+    background: $progress-gradient;
+    height: 100%;
+    border-radius: 3px;
+    transition: all 0.5s ease-out;
+  }
+}
