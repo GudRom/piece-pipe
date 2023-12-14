@@ -1,4 +1,4 @@
-import { InputHTMLAttributes, forwardRef } from "react";
+import { InputHTMLAttributes, forwardRef, memo } from "react";
 import styles from "./TextInput.module.scss";
 import classNames from "classnames";
 
@@ -32,4 +32,4 @@ const TextInput = forwardRef<HTMLInputElement, InputProps>(function TextInput(
   );
 });
 
-export default TextInput;
+export default memo(TextInput);

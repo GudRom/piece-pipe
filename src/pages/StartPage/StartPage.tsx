@@ -5,6 +5,7 @@ import { FC, useRef } from "react";
 import { ITriangleDialog } from "elements/TriangleDialog";
 import ProgressBar from "elements/ProgressBar";
 import ScrollTabs from "components/ScrollTabs";
+import Search from "components/Search";
 
 interface Props {}
 const test = [
@@ -41,6 +42,7 @@ const StartPage: FC<Props> = () => {
   return (
     <section>
       <h1>Start page</h1>
+      <Search />
       <ScrollTabs list={test} />
       <ProgressBar maxAmount={10} currentAmount={5} />
       <Button view="contained" onClick={handleOpenDialog}>

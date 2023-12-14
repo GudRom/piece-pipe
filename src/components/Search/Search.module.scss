@@ -1,0 +1,16 @@
+@import "src/styles/variables.scss";
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+
+  &__button {
+    transition: all 0.2s ease-out;
+    &:active {
+      filter: drop-shadow($btn-shadow);
+    }
+  }
+}

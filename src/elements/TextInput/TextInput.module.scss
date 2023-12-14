@@ -6,6 +6,7 @@
   font-weight: 500;
   padding: 10px 15px;
   transition: all 0.4s ease-in;
+  color: $intimateblack;
 
   &::placeholder {
     color: rgba(28, 19, 14, 0.6);
@@ -31,7 +32,7 @@
   &_outlined {
     border-radius: 10px;
     border: 1px solid $likegold;
-    background: $flesh;
+    background: $almostwhite;
     text-align: start;
   }
 }
