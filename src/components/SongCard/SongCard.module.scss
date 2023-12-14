@@ -1,0 +1,19 @@
+@import "src/styles/variables.scss";
+
+.song {
+  width: 100%;
+  border: 1px solid $flesh;
+  box-shadow: 2px 2px 4px 0px $flesh;
+  padding: 0.6em;
+
+  &__textBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  &__duration {
+    white-space: nowrap;
+    overflow: visible !important;
+  }
+}
