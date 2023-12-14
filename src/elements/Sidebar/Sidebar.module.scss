@@ -1,0 +1,23 @@
+@import "src/styles/variables.scss";
+
+.sidebar {
+  width: 100%;
+  max-width: 450px;
+  height: calc(100vh - 63px);
+  background-color: $almostwhite;
+  visibility: hidden;
+  position: fixed;
+  top: 63px;
+  right: 0;
+  animation: hide 1s;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: all 0.6s ease-in-out;
+
+  &_visible {
+    visibility: visible;
+    transform: none;
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+  }
+}

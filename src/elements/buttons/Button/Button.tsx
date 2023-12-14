@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { ButtonHTMLAttributes, ReactNode, FC } from "react";
+import { ButtonHTMLAttributes, ReactNode, FC, memo } from "react";
 import styles from "./Button.module.scss";
 export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   handleClick?: () => void;
@@ -24,4 +24,4 @@ const Button: FC<ButtonProps> = ({
   );
 };
 
-export default Button;
+export default memo(Button);
