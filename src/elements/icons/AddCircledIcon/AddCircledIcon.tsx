@@ -24,62 +24,23 @@ const AddCircledIcon: FC<IconProps> = ({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={width ?? "58"}
-      height={height ?? "58"}
-      viewBox="0 0 58 58"
+      width={width ?? "50"}
+      height={height ?? "50"}
+      viewBox="0 0 50 50"
       fill="none"
       className={classIcon}
       {...props}
     >
-      <g filter="url(#filter0_d_15_1038)">
-        <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M29 54C42.8071 54 54 42.8071 54 29C54 15.1929 42.8071 4 29 4C15.1929 4 4 15.1929 4 29C4 42.8071 15.1929 54 29 54ZM29 51C41.1503 51 51 41.1503 51 29C51 16.8497 41.1503 7 29 7C16.8497 7 7 16.8497 7 29C7 41.1503 16.8497 51 29 51Z"
-          fill="#FBBC81"
-        />
-        <path
-          d="M27.6 23C27.6 22.4477 28.0477 22 28.6 22H29.4C29.9523 22 30.4 22.4477 30.4 23V27.6H35C35.5523 27.6 36 28.0477 36 28.6V29.4C36 29.9523 35.5523 30.4 35 30.4H30.4V35C30.4 35.5523 29.9523 36 29.4 36H28.6C28.0477 36 27.6 35.5523 27.6 35V30.4H23C22.4477 30.4 22 29.9523 22 29.4V28.6C22 28.0477 22.4477 27.6 23 27.6H27.6V23Z"
-          fill="#FBBC81"
-        />
-      </g>
-      <defs>
-        <filter
-          id="filter0_d_15_1038"
-          x="0"
-          y="0"
-          width="58"
-          height="58"
-          filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
-        >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
-          <feColorMatrix
-            in="SourceAlpha"
-            type="matrix"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-            result="hardAlpha"
-          />
-          <feOffset />
-          <feGaussianBlur stdDeviation="2" />
-          <feComposite in2="hardAlpha" operator="out" />
-          <feColorMatrix
-            type="matrix"
-            values="0 0 0 0 0.984314 0 0 0 0 0.737255 0 0 0 0 0.505882 0 0 0 1 0"
-          />
-          <feBlend
-            mode="normal"
-            in2="BackgroundImageFix"
-            result="effect1_dropShadow_15_1038"
-          />
-          <feBlend
-            mode="normal"
-            in="SourceGraphic"
-            in2="effect1_dropShadow_15_1038"
-            result="shape"
-          />
-        </filter>
-      </defs>
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M25 50C38.8071 50 50 38.8071 50 25C50 11.1929 38.8071 0 25 0C11.1929 0 0 11.1929 0 25C0 38.8071 11.1929 50 25 50ZM25 47C37.1503 47 47 37.1503 47 25C47 12.8497 37.1503 3 25 3C12.8497 3 3 12.8497 3 25C3 37.1503 12.8497 47 25 47Z"
+        fill="#FBBC81"
+      />
+      <path
+        d="M23.6 19C23.6 18.4477 24.0477 18 24.6 18H25.4C25.9523 18 26.4 18.4477 26.4 19V23.6H31C31.5523 23.6 32 24.0477 32 24.6V25.4C32 25.9523 31.5523 26.4 31 26.4H26.4V31C26.4 31.5523 25.9523 32 25.4 32H24.6C24.0477 32 23.6 31.5523 23.6 31V26.4H19C18.4477 26.4 18 25.9523 18 25.4V24.6C18 24.0477 18.4477 23.6 19 23.6H23.6V19Z"
+        fill="#FBBC81"
+      />
     </svg>
   );
 };

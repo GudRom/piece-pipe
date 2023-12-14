@@ -1,7 +1,13 @@
+@import "src/styles/variables.scss", "src/styles/mixins.scss";
+
 .tab {
   border: none;
   padding: 0;
   background-color: transparent;
   box-shadow: none;
   outline: none !important;
+
+  &__icon {
+    filter: drop-shadow(0px 0px 4px $likegold);
+  }
 }

@@ -4,6 +4,8 @@ import Avatar from "elements/Avatar";
 import { Tabs, Tab } from "react-tabs-scrollable";
 import "react-tabs-scrollable/dist/rts.css";
 import styles from "./ScrollTabs.module.scss";
+import IconButton from "elements/buttons/IconButton";
+import AddCircledIcon from "elements/icons/AddCircledIcon";
 
 interface Props {
   list: IUserModel[];
@@ -21,6 +23,11 @@ const ScrollTabs: FC<Props> = ({ list }) => {
           <Avatar user={el} isList={true} />
         </Tab>
       ))}
+      <Tab className={styles.tab}>
+        <IconButton>
+          <AddCircledIcon className={styles.tab__icon} />
+        </IconButton>
+      </Tab>
     </Tabs>
   );
 };
