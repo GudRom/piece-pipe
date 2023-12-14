@@ -36,6 +36,16 @@
     line-height: 1.286;
   }
 
+  &_p-12 {
+    font-size: 12px;
+    line-height: 1;
+  }
+
+  &_p-8 {
+    font-size: 8px;
+    line-height: 1;
+  }
+
   &_primary {
     color: $intimateblack;
   }

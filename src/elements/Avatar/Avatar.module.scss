@@ -1,0 +1,30 @@
+@import "src/styles/variables.scss", "src/styles/mixins.scss";
+
+.avatar {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+
+  &__img {
+    width: 25vw;
+    height: 25vw;
+    max-width: 140px;
+    max-height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &__countBox {
+    position: absolute;
+    right: 6px;
+    bottom: 6px;
+    background-color: $likegold;
+    border-radius: 50%;
+    width: 7vw;
+    height: 7vw;
+    @include centerFlex();
+  }
+}
