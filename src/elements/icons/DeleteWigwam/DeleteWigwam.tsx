@@ -18,8 +18,8 @@ const DeleteWigwam: FC<IconProps> = ({
       {...props}
     >
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M14.0488 4.2L11.122 0L10.2439 0.75L13.1707 5.1L0 30H30L14.9268 5.1L16.9756 0.45L16.0976 0L14.0488 4.2ZM27.439 28.5L14.0488 6L2.56098 28.5H27.439Z"
         fill="#F7F3E8"
       />

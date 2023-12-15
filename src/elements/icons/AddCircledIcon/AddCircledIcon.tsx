@@ -32,8 +32,8 @@ const AddCircledIcon: FC<IconProps> = ({
       {...props}
     >
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M25 50C38.8071 50 50 38.8071 50 25C50 11.1929 38.8071 0 25 0C11.1929 0 0 11.1929 0 25C0 38.8071 11.1929 50 25 50ZM25 47C37.1503 47 47 37.1503 47 25C47 12.8497 37.1503 3 25 3C12.8497 3 3 12.8497 3 25C3 37.1503 12.8497 47 25 47Z"
         fill="#FBBC81"
       />
