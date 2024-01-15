@@ -5,19 +5,13 @@
   word-break: break-word;
 
   &_title {
-    font-size: 44px;
-    font-weight: 700;
-    line-height: 1.0909;
-  }
-
-  &_button {
-    font-size: 1.5rem;
-    font-weight: 500;
+    font-size: 24px;
     line-height: 1.2;
   }
 
-  &_p-20 {
-    font-size: 20px;
+  &_button {
+    font-size: 1.1rem;
+    font-weight: 500;
     line-height: 1.2;
   }
 
@@ -56,9 +50,17 @@
 
   &_accent {
     color: $likegold;
+    filter: drop-shadow($btn-shadow);
   }
 
   &_extra {
     color: $sexyred;
+  }
+
+  &_multilines {
+    overflow: "hidden";
+    display: "-webkit-box";
+    -webkit-box-orient: "vertical";
+    text-overflow: "ellipsis";
   }
 }

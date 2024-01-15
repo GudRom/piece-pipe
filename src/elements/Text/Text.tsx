@@ -6,7 +6,7 @@ export type TextProps = {
   /** Дополнительный класс */
   className?: string;
   /** Стиль отображения */
-  view?: "title" | "button" | "p-20" | "p-18" | "p-16" | "p-14" | "p-12" | "p-8";
+  view?: "title" | "button" | "p-18" | "p-16" | "p-14" | "p-12" | "p-8";
   /** Html-тег */
   tag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "div" | "p" | "span";
   /** Начертание шрифта */
@@ -34,6 +34,7 @@ const Text: FC<TextProps> = ({
     {
       [styles[`text_${view}`]]: view,
       [styles[`text_${color}`]]: color,
+      [styles["text_multilines"]]: maxLines,
     },
     className
   );
@@ -43,10 +44,6 @@ const Text: FC<TextProps> = ({
       style={{
         fontWeight: weight,
         WebkitLineClamp: maxLines,
-        overflow: "hidden",
-        display: "-webkit-box",
-        WebkitBoxOrient: "vertical",
-        textOverflow: "ellipsis",
       }}
     >
       {children}

@@ -9,4 +9,10 @@
   font-size: 1rem;
   background: $button-gradient;
   box-shadow: $box-shadow;
+  position: relative;
+  z-index: 5;
+
+  &__logoBtn {
+    padding: 0;
+  }
 }
