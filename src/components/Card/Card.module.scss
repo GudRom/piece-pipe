@@ -1,0 +1,15 @@
+@import "src/styles/variables.scss", "src/styles/mixins.scss";
+
+.card {
+  width: 130px;
+  height: 130px;
+  border-radius: 10px;
+  padding: 8px;
+  background: $card-gradient;
+  filter: drop-shadow($card-shadow);
+  @include centerFlex();
+  color: $intimateblack;
+}
+a:active > .card {
+  background: $card-gradient-active;
+}

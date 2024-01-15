@@ -9,15 +9,13 @@ interface Props {
 }
 
 const ProgressBar: FC<Props> = ({ maxAmount, currentAmount, className }) => {
-  const progressLineWidth = (currentAmount / maxAmount) * 100;
   const progressClass = classNames(className, styles.progress);
   return (
-    <div className={progressClass}>
-      <div
-        className={styles.progress__line}
-        style={{ width: `${progressLineWidth}%` }}
-      ></div>
-    </div>
+    <progress
+      className={progressClass}
+      value={currentAmount}
+      max={maxAmount}
+    ></progress>
   );
 };
 

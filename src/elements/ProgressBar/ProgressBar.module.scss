@@ -7,7 +7,11 @@
   overflow: hidden;
   filter: drop-shadow(2px 2px 5px #ffe7cd);
 
-  &__line {
+  &::-webkit-progress-bar {
+    background-color: transparent;
+  }
+
+  &::-webkit-progress-value {
     background: $progress-gradient;
     height: 100%;
     border-radius: 3px;
