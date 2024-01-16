@@ -1,5 +1,14 @@
 @import "src/styles/variables.scss";
 
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .icon {
   fill: currentColor;
 
@@ -13,5 +22,18 @@
 
   &_accent > path {
     fill: $sexyred;
+  }
+
+  &__note {
+    animation-name: fade-in;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    @for $i from 1 through 7 {
+      &_#{$i} {
+        animation-delay: .5s * $i;
+      }
+    }
   }
 }
