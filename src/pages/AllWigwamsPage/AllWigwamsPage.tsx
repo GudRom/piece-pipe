@@ -1,14 +1,16 @@
 import AddWigwamIcon from "elements/icons/AddWigwamIcon";
 import IconButton from "elements/buttons/IconButton";
-import { FC } from "react";
+import { FC, FormEvent, useCallback, useRef, useState } from "react";
 import Text from "elements/Text";
 import { IWigwamModel } from "utils/types/model/IWigwamModel";
 import Card from "components/Card";
 import ListWithTitle from "pages/AllWigwamsPage/components/ListWithTitle";
 import styles from "./AllWigwamsPage.module.scss";
+import TriangleDialog, { ITriangleDialog } from "elements/TriangleDialog";
+import TextInput from "elements/TextInput";
+import Button from "elements/buttons/Button";
 
-interface Props {
-}
+interface Props {}
 const testCard: IWigwamModel = {
   id: 1,
   name: "Пати на хате",
@@ -141,10 +143,27 @@ const testCard: IWigwamModel = {
 };
 const list: IWigwamModel[] = [testCard, testCard];
 const AllWigwamsPage: FC<Props> = () => {
+  const [text, setText] = useState("");
+  const ref = useRef<ITriangleDialog>(null);
+  const handleOpenDialog = useCallback(() => {
+    ref?.current?.show();
+  }, []);
+
+  // const handleChange = (e: FormEvent<HTMLInputElement>) => {
+  //   setText(e.currentTarget.value);
+  // };
+  const submitHandler = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    ref.current?.hide();
+    setText("");
+  };
   return (
     <section className={styles.wigwams}>
       <div className={styles.wigwams__header}>
-        <IconButton className={styles.wigwams__createBtn}>
+        <IconButton
+          className={styles.wigwams__createBtn}
+          onClick={handleOpenDialog}
+        >
           <AddWigwamIcon width={40} height={40} />
           <Text
             view="p-8"
@@ -172,6 +191,25 @@ const AllWigwamsPage: FC<Props> = () => {
           <Card key={wigwam.id} card={wigwam} navlink={`${wigwam.id}`} />
         ))}
       </ListWithTitle>
+      <TriangleDialog ref={ref}>
+        <form className={styles.wigwams__form} onSubmit={submitHandler}>
+          <TextInput
+            value={text}
+            onChange={setText}
+            variant={"standard"}
+            placeholder="Название"
+          />
+          <Button
+            view="contained"
+            type="submit"
+            className={styles.wigwams__form__btn}
+          >
+            <Text view="button" color="primary">
+              Создать
+            </Text>
+          </Button>
+        </form>
+      </TriangleDialog>
     </section>
   );
 };
