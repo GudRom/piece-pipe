@@ -1,0 +1,15 @@
+.wigwams {
+  padding: 15px 0;
+  &__header {
+    width: 100%;
+  }
+  &__createBtn {
+    margin-left: auto;
+    margin-right: 25px;
+    flex-direction: column;
+
+    &__text {
+      margin-top: 5px;
+    }
+  }
+}

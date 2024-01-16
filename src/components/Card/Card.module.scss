@@ -1,15 +1,32 @@
 @import "src/styles/variables.scss", "src/styles/mixins.scss";
 
 .card {
-  width: 130px;
-  height: 130px;
+  position: relative;
+  width: 40.625vw;
+  height: 40.625vw;
+  max-width: 300px;
+  max-height: 300px;
   border-radius: 10px;
   padding: 8px;
   background: $card-gradient;
   filter: drop-shadow($card-shadow);
   @include centerFlex();
   color: $intimateblack;
-}
-a:active > .card {
-  background: $card-gradient-active;
+  flex-direction: column;
+
+  &__textBox {
+    margin-bottom: 10px;
+    & > p {
+      margin: 0;
+    }
+  }
+
+  &__btnBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+  }
 }
