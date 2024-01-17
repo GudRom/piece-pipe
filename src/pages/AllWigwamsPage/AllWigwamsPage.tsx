@@ -163,15 +163,9 @@ const AllWigwamsPage: FC<Props> = () => {
         <IconButton
           className={styles.wigwams__createBtn}
           onClick={handleOpenDialog}
+          text="создать"
         >
           <AddWigwamIcon width={40} height={40} />
-          <Text
-            view="p-8"
-            tag="span"
-            className={styles.wigwams__createBtn__text}
-          >
-            cоздать
-          </Text>
         </IconButton>
       </div>
       {list.length > 0 && (

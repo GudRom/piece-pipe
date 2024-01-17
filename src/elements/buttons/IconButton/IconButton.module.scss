@@ -5,6 +5,11 @@
   padding: 0.5em;
   border: none;
   @include centerFlex();
+  flex-direction: column;
+
+  &__text {
+    margin-top: 5px;
+  }
   &:disabled {
     opacity: 0.5;
   }

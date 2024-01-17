@@ -15,8 +15,10 @@ function App() {
       <Header setIsMenuOpen={setIsMenuOpen} isMenuOpen={isMenuOpen} />
       <Routes>
         <Route path="/" element={<StartPage />} />
-        <Route path="/wigwams" element={<AllWigwamsPage />} />
-        <Route path="/:wigwamId" element={<WigwamPage />} />
+        <Route path="/wigwams">
+          <Route index element={<AllWigwamsPage />} />
+          <Route path=":id" element={<WigwamPage />} />
+        </Route>
         <Route path="/search" element={<SearchPage />} />
       </Routes>
       <Menu isOpen={isMenuOpen} />

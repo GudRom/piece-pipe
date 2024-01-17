@@ -9,9 +9,10 @@ import AddCircledIcon from "elements/icons/AddCircledIcon";
 
 interface Props {
   list: IUserModel[];
+  handleAddClick: () => void;
 }
 
-const ScrollTabs: FC<Props> = ({ list }) => {
+const ScrollTabs: FC<Props> = ({ list, handleAddClick }) => {
   const [activeTab, setActiveTab] = useState(1);
   const onTabClick = (_e: unknown, index: SetStateAction<number>) => {
     setActiveTab(index);
@@ -24,7 +25,7 @@ const ScrollTabs: FC<Props> = ({ list }) => {
         </Tab>
       ))}
       <Tab className={styles.tab}>
-        <IconButton>
+        <IconButton onClick={handleAddClick}>
           <AddCircledIcon className={styles.tab__icon} />
         </IconButton>
       </Tab>

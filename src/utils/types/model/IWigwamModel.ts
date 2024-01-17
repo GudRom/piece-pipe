@@ -6,11 +6,11 @@ export interface IWigwamModel {
   name: string;
   ownerId: number;
   maxSongForMember: number;
-  songs: [
-    {
-      memberId: number;
-      song: ISongModel;
-    }
-  ];
+  songs: Song[];
   members: IUserModel[];
 }
+
+export type Song = {
+  memberId: number;
+  song: ISongModel;
+};
