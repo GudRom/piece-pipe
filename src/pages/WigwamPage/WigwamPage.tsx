@@ -10,6 +10,7 @@ import styles from "./WigwamPage.module.scss";
 import SongList from "./components/SongList";
 import { useNavigate } from "react-router-dom";
 import TriangleDialog, { ITriangleDialog } from "elements/TriangleDialog";
+import Snackbar, { ISnackbar } from "elements/Snackbar";
 
 const testWigwam = {
   id: 1,
@@ -148,16 +149,20 @@ const WigwamPage: FC<Props> = () => {
   const { name, members, maxSongForMember, songs } = testWigwam;
   const navigate = useNavigate();
   const ref = useRef<ITriangleDialog>(null);
+  const snackbarRef = useRef<ISnackbar>(null);
   const handleOpenDeleteDialog = useCallback(() => {
     ref?.current?.show();
   }, []);
   const handleCloseDialog = useCallback(() => {
     ref?.current?.hide();
   }, []);
+  const handleOpenSnackbar = useCallback(() => {
+    snackbarRef?.current?.show();
+  }, []);
   return (
     <section className={styles.wigwam}>
       <div className={styles.wigwam__header}>
-        <IconButton text="слушать">
+        <IconButton text="слушать" onClick={handleOpenSnackbar}>
           <VynilIcon width={48} height={40} />
         </IconButton>
         <Text view="title">{name}</Text>
@@ -200,6 +205,11 @@ const WigwamPage: FC<Props> = () => {
           </Text>
         </Button>
       </TriangleDialog>
+      <Snackbar ref={snackbarRef}>
+        <Text view="p-12" color="primary" tag="span">
+          Эта кнопка не работает
+        </Text>
+      </Snackbar>
     </section>
   );
 };
