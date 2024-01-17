@@ -21,20 +21,23 @@ const SongCard: FC<Props> = ({ song, actionSlot, tag }) => {
             maxLines={1}
             weight="medium"
           >{`${song.artist} - ${song.name}`}</Text>
-          <Text
-            view="p-16"
-            tag="span"
-            weight="medium"
-            className={styles.song__duration}
-          >
-            {`${Math.floor(song.duration / 60)}:${
-              song.duration % 60 < 10
-                ? "0" + (song.duration % 60)
-                : song.duration % 60
-            }`}
-          </Text>
+          {actionSlot ? (
+            actionSlot
+          ) : (
+            <Text
+              view="p-16"
+              tag="span"
+              weight="medium"
+              className={styles.song__duration}
+            >
+              {`${Math.floor(song.duration / 60)}:${
+                song.duration % 60 < 10
+                  ? "0" + (song.duration % 60)
+                  : song.duration % 60
+              }`}
+            </Text>
+          )}
         </div>
-        {actionSlot}
       </article>
     </Element>
   );

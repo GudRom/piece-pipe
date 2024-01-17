@@ -1,6 +1,8 @@
 @import "src/styles/mixins.scss";
-
-.songList {
+.list {
   @include songList();
-  margin: 15px 0 0;
+
+  &__btn {
+    margin-top: 15px;
+  }
 }

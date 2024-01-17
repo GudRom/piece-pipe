@@ -1,0 +1,29 @@
+.search {
+  padding: 30px 10px;
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    margin: 0 auto;
+  }
+
+  &__searchTitle {
+    margin: 0 0 10px 30px;
+  }
+
+  &__progressBox {
+    margin: 10px 0 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__text {
+      margin: 0 0 10px;
+    }
+  }
+
+  &__form {
+    margin: auto;
+  }
+}
