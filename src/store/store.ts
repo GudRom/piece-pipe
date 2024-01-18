@@ -1,12 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { save, load } from "redux-localstorage-simple";
+import wigwamReducer from "./slices/wigwam/slice";
 
 export const store = configureStore({
-  reducer: {},
-  middleware: (getDefaultMiddleware) =>
-    process.env.REACT_APP_MODE === `development`
-      ? getDefaultMiddleware().concat(save())
-      : getDefaultMiddleware().concat(save()),
+  reducer: {
+    wigwamReducer,
+  },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(save()),
   preloadedState: load(),
 });
 
