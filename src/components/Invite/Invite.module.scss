@@ -1,6 +1,6 @@
 @import "src/styles/variables.scss", "src/styles/mixins.scss";
 
-.card {
+.invite {
   position: relative;
   width: 40.625vw;
   height: 40.625vw;
@@ -13,4 +13,20 @@
   @include centerFlex();
   color: $intimateblack;
   flex-direction: column;
+
+  &__textBox {
+    margin-bottom: 10px;
+    & > p {
+      margin: 0;
+    }
+  }
+
+  &__btnBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+  }
 }
