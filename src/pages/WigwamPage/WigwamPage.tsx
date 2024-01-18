@@ -149,6 +149,7 @@ const WigwamPage: FC<Props> = () => {
   const { name, members, maxSongForMember, songs } = testWigwam;
   const navigate = useNavigate();
   const ref = useRef<ITriangleDialog>(null);
+  const inviteRef = useRef<ITriangleDialog>(null);
   const snackbarRef = useRef<ISnackbar>(null);
   const handleOpenDeleteDialog = useCallback(() => {
     ref?.current?.show();
@@ -160,7 +161,7 @@ const WigwamPage: FC<Props> = () => {
     snackbarRef?.current?.show();
   }, []);
   const handleAddClick = useCallback(() => {
-    snackbarRef?.current?.show();
+    inviteRef?.current?.show();
   }, []);
   return (
     <section className={styles.wigwam}>
@@ -200,6 +201,16 @@ const WigwamPage: FC<Props> = () => {
         <Button view={"contained"} onClick={handleCloseDialog}>
           <Text view="button" color="primary">
             Удалить
+          </Text>
+        </Button>
+      </TriangleDialog>
+      <TriangleDialog ref={inviteRef}>
+        <Text view="p-18" color="primary" className={styles.wigwam__dialogText}>
+          Ссылка-приглашение внутри <span>&#128230;</span>
+        </Text>
+        <Button view={"contained"} onClick={handleCloseDialog}>
+          <Text view="button" color="primary">
+            Получить
           </Text>
         </Button>
       </TriangleDialog>

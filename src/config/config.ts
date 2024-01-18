@@ -17,4 +17,6 @@ export const menuNavLinks = [
   },
 ];
 
+export const MAX_SONGS_FOR_SLICE = 5;
+
 Object.freeze(menuNavLinks);

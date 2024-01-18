@@ -26,7 +26,8 @@
       "config": ["config/*"],
       "styles": ["styles/*"],
       "utils": ["utils/*"],
-      "elements": ["elements/*"]
+      "elements": ["elements/*"],
+      "hooks": ["hooks/*"]
     }
   },
   "include": ["src"],

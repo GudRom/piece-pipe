@@ -8,6 +8,8 @@ import CheckmarkIcon from "elements/icons/CheckmarkIcon";
 import PlusIcon from "elements/icons/PlusIcon";
 import Button from "elements/buttons/Button";
 import Text from "elements/Text";
+import { MAX_SONGS_FOR_SLICE } from "config/config";
+import { useSlice } from "hooks/useSlice";
 
 interface Props {
   songs: Song[];
@@ -15,9 +17,10 @@ interface Props {
 }
 
 const SongList: FC<Props> = ({ songs, currentMemberId }) => {
+  const { currentSlice, getMore, getLess } = useSlice();
   return (
     <ul className={styles.list}>
-      {songs.map((song) => (
+      {songs.slice(0, currentSlice).map((song) => (
         <SongCard
           song={song.song}
           key={song.song.id}
@@ -42,11 +45,16 @@ const SongList: FC<Props> = ({ songs, currentMemberId }) => {
           }
         />
       ))}
-      {currentMemberId && (
-        <Button view="text" className={styles.list__btn}>
-          <Text view="button">Ещее</Text>
-        </Button>
-      )}
+      {songs.length > MAX_SONGS_FOR_SLICE &&
+        (currentSlice < songs.length ? (
+          <Button onClick={getMore} view="text" className={styles.list__btn}>
+            <Text view="button">Ещее</Text>
+          </Button>
+        ) : (
+          <Button onClick={getLess} view="text" className={styles.list__btn}>
+            <Text view="button">Меньше</Text>
+          </Button>
+        ))}
     </ul>
   );
 };
