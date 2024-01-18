@@ -3,7 +3,6 @@ import VynilIcon from "elements/icons/VynilIcon";
 import IconButton from "elements/buttons/IconButton";
 import Text from "elements/Text";
 import { FC, useCallback, useRef } from "react";
-import ScrollTabs from "components/ScrollTabs";
 import ProgressBar from "elements/ProgressBar";
 import Button from "elements/buttons/Button";
 import styles from "./WigwamPage.module.scss";
@@ -11,6 +10,7 @@ import SongList from "./components/SongList";
 import { useNavigate } from "react-router-dom";
 import TriangleDialog, { ITriangleDialog } from "elements/TriangleDialog";
 import Snackbar, { ISnackbar } from "elements/Snackbar";
+import MembersList from "./components/MembersList";
 
 const testWigwam = {
   id: 1,
@@ -159,6 +159,9 @@ const WigwamPage: FC<Props> = () => {
   const handleOpenSnackbar = useCallback(() => {
     snackbarRef?.current?.show();
   }, []);
+  const handleAddClick = useCallback(() => {
+    snackbarRef?.current?.show();
+  }, []);
   return (
     <section className={styles.wigwam}>
       <div className={styles.wigwam__header}>
@@ -170,12 +173,7 @@ const WigwamPage: FC<Props> = () => {
           <DeleteWigwam width={40} height={40} />
         </IconButton>
       </div>
-      <ScrollTabs
-        list={members}
-        handleAddClick={function (): void {
-          throw new Error("Function not implemented.");
-        }}
-      />
+      <MembersList list={members} handleAddClick={handleAddClick} />
       <div className={styles.wigwam__progressBox}>
         <Text view="p-18" className={styles.wigwam__progressBox__text}>
           Песен в плейлисте: {songs.length}

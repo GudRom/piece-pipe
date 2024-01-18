@@ -1,0 +1,13 @@
+.scroller {
+  padding: 5px 10px;
+  overflow-x: scroll;
+  width: auto;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  &::-webkit-scrollbar {
+    padding: 0;
+    height: 0;
+  }
+}
