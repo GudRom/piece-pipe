@@ -16,20 +16,26 @@ import { useAppSelector } from "store/hooks";
 interface Props {}
 
 const WigwamPage: FC<Props> = () => {
-  const { currentWigwam } = useAppSelector((state) => state.wigwamReducer);
   const navigate = useNavigate();
+
   const ref = useRef<ITriangleDialog>(null);
   const inviteRef = useRef<ITriangleDialog>(null);
   const snackbarRef = useRef<ISnackbar>(null);
+
+  const { currentWigwam } = useAppSelector((state) => state.wigwamReducer);
+
   const handleOpenDeleteDialog = useCallback(() => {
     ref?.current?.show();
   }, []);
+
   const handleCloseDialog = useCallback(() => {
     ref?.current?.hide();
   }, []);
+
   const handleOpenSnackbar = useCallback(() => {
     snackbarRef?.current?.show();
   }, []);
+  
   const handleAddClick = useCallback(() => {
     inviteRef?.current?.show();
   }, []);
@@ -43,7 +49,7 @@ const WigwamPage: FC<Props> = () => {
         <IconButton text="слушать" onClick={handleOpenSnackbar}>
           <VynilIcon width={48} height={40} />
         </IconButton>
-        <Text view="title">{name}</Text>
+        <Text view="title" className={styles.wigwam__header__title} maxLines={2}>{name}</Text>
         <IconButton text="сжечь" onClick={handleOpenDeleteDialog}>
           <DeleteWigwam width={40} height={40} />
         </IconButton>
