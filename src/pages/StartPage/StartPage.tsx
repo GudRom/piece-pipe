@@ -3,10 +3,6 @@ import Button from "elements/buttons/Button";
 import Text from "elements/Text";
 import { FC, useCallback, useRef } from "react";
 import { ITriangleDialog } from "elements/TriangleDialog";
-// import ProgressBar from "elements/ProgressBar";
-// import ScrollTabs from "components/ScrollTabs";
-// import Search from "components/Search";
-// import { IWigwamModel } from "utils/types/model/IWigwamModel";
 import styles from "./StartPage.module.scss";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "store/hooks";
@@ -15,10 +11,12 @@ import { CURRENT_USER_ID } from "config/config";
 
 interface Props {}
 const StartPage: FC<Props> = () => {
-  const currentUser = useAppSelector((state) => state.userReducer.currentUser);
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
+  
   const ref = useRef<ITriangleDialog>(null);
+  const currentUser = useAppSelector((state) => state.userReducer.currentUser);
+
   const handleMainButtonClick = useCallback(() => {
     if (currentUser) {
       navigate("/wigwams");
@@ -27,9 +25,11 @@ const StartPage: FC<Props> = () => {
       ref?.current?.show();
     }
   }, [currentUser, dispatch, navigate]);
+
   const handleNavigate = useCallback(() => {
     navigate("./wigwams");
   }, [navigate]);
+  
   return (
     <section className={styles.startPage}>
       <Text view="title" tag="h1" color="secondary">
