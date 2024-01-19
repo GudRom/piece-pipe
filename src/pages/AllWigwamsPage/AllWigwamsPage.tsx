@@ -19,37 +19,37 @@ import Snackbar, { ISnackbar } from "elements/Snackbar";
 interface Props {}
 const AllWigwamsPage: FC<Props> = () => {
   const [text, setText] = useState("");
+
+  const dispatch = useAppDispatch();
+
   const ref = useRef<ITriangleDialog>(null);
   const snackbarRef = useRef<ISnackbar>(null);
-  const handleOpenDialog = useCallback(() => {
-    ref?.current?.show();
-  }, []);
-  const dispatch = useAppDispatch();
+
   const { wigwams } = useAppSelector((state) => state.wigwamReducer);
   const { invites } = useAppSelector((state) => state.inviteReducer);
   const currentUser = useAppSelector((state) => state.userReducer.currentUser);
-  const userWigwams = wigwams?.filter((wigwam) =>
-    wigwam.members?.find((member) => member.id === 1)
-  );
+
   useEffect(() => {
-    // Promise.all([
-    //   dispatch(getWigwams(1)),
-    //   dispatch(fetchInvites({ type: "to", userId: 1 })),
-    // ]);
     dispatch(getWigwams());
     dispatch(fetchInvites({ type: "to", userId: currentUser!.id }));
   }, [currentUser, dispatch]);
 
-  // const handleChange = (e: FormEvent<HTMLInputElement>) => {
-  //   setText(e.currentTarget.value);
-  // };
+  const handleOpenDialog = useCallback(() => {
+    ref?.current?.show();
+  }, []);
+
+  const userWigwams = wigwams?.filter((wigwam) =>
+    wigwam.members?.find((member) => member.id === 1)
+  );
 
   const handleDeny = useCallback(() => {
     return;
   }, []);
+
   const handleConfirm = useCallback(() => {
     return;
   }, []);
+
   const submitHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const dto: PostWigwamDto = {
@@ -67,6 +67,7 @@ const AllWigwamsPage: FC<Props> = () => {
       snackbarRef.current?.show();
     }
   };
+
   return (
     <section className={styles.wigwams}>
       <div className={styles.wigwams__header}>
