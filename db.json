@@ -1055,6 +1055,20 @@
           "avatar": "https://images.unsplash.com/photo-1696416748833-0407ebea6047?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDExNnx0b3dKWkZza3BHZ3x8ZW58MHx8fHx8"
         }
       ]
+    },
+    {
+      "name": "party with Pirlo",
+      "ownerId": 10,
+      "maxSongForMember": 10,
+      "songs": [],
+      "members": [
+        {
+          "id": 10,
+          "name": "Ava Martinez",
+          "avatar": "https://images.unsplash.com/photo-1696416748833-0407ebea6047?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDExNnx0b3dKWkZza3BHZ3x8ZW58MHx8fHx8"
+        }
+      ],
+      "id": 7
     }
   ],
   "invites": [

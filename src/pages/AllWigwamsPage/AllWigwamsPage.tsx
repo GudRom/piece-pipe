@@ -9,22 +9,27 @@ import TriangleDialog, { ITriangleDialog } from "elements/TriangleDialog";
 import TextInput from "elements/TextInput";
 import Button from "elements/buttons/Button";
 import { useAppDispatch, useAppSelector } from "store/hooks";
-import { getWigwams } from "store/slices/wigwam/slice";
+import { createWigwam, getWigwams } from "store/slices/wigwam/slice";
 import Invite from "components/Invite";
 import { fetchInvites } from "store/slices/invite/slice";
+import { PostWigwamDto } from "utils/types/dto/wigwam/PostWigwamDto";
+import { MAX_SONGS_FOR_MEMBER } from "config/config";
+import Snackbar, { ISnackbar } from "elements/Snackbar";
 
 interface Props {}
 const AllWigwamsPage: FC<Props> = () => {
   const [text, setText] = useState("");
   const ref = useRef<ITriangleDialog>(null);
+  const snackbarRef = useRef<ISnackbar>(null);
   const handleOpenDialog = useCallback(() => {
     ref?.current?.show();
   }, []);
   const dispatch = useAppDispatch();
   const { wigwams } = useAppSelector((state) => state.wigwamReducer);
   const { invites } = useAppSelector((state) => state.inviteReducer);
-  const usersWigwams = wigwams.filter((wigwam) =>
-    wigwam.members.find((member) => member.id === 1)
+  const currentUser = useAppSelector((state) => state.userReducer.currentUser);
+  const userWigwams = wigwams?.filter((wigwam) =>
+    wigwam.members?.find((member) => member.id === 1)
   );
   useEffect(() => {
     // Promise.all([
@@ -32,8 +37,8 @@ const AllWigwamsPage: FC<Props> = () => {
     //   dispatch(fetchInvites({ type: "to", userId: 1 })),
     // ]);
     dispatch(getWigwams());
-    dispatch(fetchInvites({ type: "to", userId: 1 }));
-  }, [dispatch]);
+    dispatch(fetchInvites({ type: "to", userId: currentUser!.id }));
+  }, [currentUser, dispatch]);
 
   // const handleChange = (e: FormEvent<HTMLInputElement>) => {
   //   setText(e.currentTarget.value);
@@ -47,8 +52,20 @@ const AllWigwamsPage: FC<Props> = () => {
   }, []);
   const submitHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    ref.current?.hide();
-    setText("");
+    const dto: PostWigwamDto = {
+      name: text.trim(),
+      ownerId: currentUser!.id,
+      maxSongForMember: MAX_SONGS_FOR_MEMBER,
+      songs: [],
+      members: [currentUser!],
+    };
+    if (text) {
+      dispatch(createWigwam(dto));
+      ref.current?.hide();
+      setText("");
+    } else {
+      snackbarRef.current?.show();
+    }
   };
   return (
     <section className={styles.wigwams}>
@@ -73,9 +90,9 @@ const AllWigwamsPage: FC<Props> = () => {
           ))}
         </ListWithTitle>
       )}
-      {usersWigwams.length > 0 ? (
+      {userWigwams.length > 0 ? (
         <ListWithTitle title="Ваши вигвамы">
-          {usersWigwams.map((wigwam) => (
+          {userWigwams.map((wigwam) => (
             <Card key={wigwam.id} card={wigwam} navlink={`${wigwam.id}`} />
           ))}
         </ListWithTitle>
@@ -101,6 +118,11 @@ const AllWigwamsPage: FC<Props> = () => {
           </Button>
         </form>
       </TriangleDialog>
+      <Snackbar ref={snackbarRef}>
+        <Text view="p-12" color="primary" tag="span">
+          Это поле обязательное
+        </Text>
+      </Snackbar>
     </section>
   );
 };

@@ -1,4 +1,4 @@
-import { Dispatch, FC, SetStateAction, useCallback, useState } from "react";
+import { Dispatch, FC, SetStateAction, useCallback } from "react";
 import LogoIcon from "elements/icons/LogoIcon";
 import BurgerIcon from "elements/icons/BurgerIcon";
 import IconButton from "elements/buttons/IconButton";
@@ -7,6 +7,9 @@ import Text from "elements/Text";
 import CrossLikeBoneIcon from "elements/icons/CrossLikeBoneIcon";
 import { useNavigate } from "react-router-dom";
 import styles from "./Header.module.scss";
+import { useAppDispatch, useAppSelector } from "store/hooks";
+import { fetchUser } from "store/slices/user/slice";
+import { CURRENT_USER_ID } from "config/config";
 
 interface Props {
   setIsMenuOpen: Dispatch<SetStateAction<boolean>>;
@@ -14,8 +17,12 @@ interface Props {
 }
 
 const Header: FC<Props> = ({ setIsMenuOpen, isMenuOpen }) => {
-  const [isAuthorized, setIsAuthorized] = useState(false);
-  const authorize = useCallback(() => setIsAuthorized(true), []);
+  const currentUser = useAppSelector((state) => state.userReducer.currentUser);
+  const dispatch = useAppDispatch();
+  const authorize = useCallback(
+    () => !currentUser && dispatch(fetchUser(CURRENT_USER_ID)),
+    [dispatch, currentUser]
+  );
   const navigate = useNavigate();
   return (
     <header className={styles.header}>
@@ -25,7 +32,7 @@ const Header: FC<Props> = ({ setIsMenuOpen, isMenuOpen }) => {
       >
         <LogoIcon />
       </IconButton>
-      {isAuthorized ? (
+      {currentUser ? (
         <IconButton onClick={() => setIsMenuOpen(!isMenuOpen)}>
           {isMenuOpen ? <CrossLikeBoneIcon /> : <BurgerIcon />}
         </IconButton>

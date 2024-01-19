@@ -9,14 +9,24 @@ import { ITriangleDialog } from "elements/TriangleDialog";
 // import { IWigwamModel } from "utils/types/model/IWigwamModel";
 import styles from "./StartPage.module.scss";
 import { useNavigate } from "react-router-dom";
+import { useAppDispatch, useAppSelector } from "store/hooks";
+import { fetchUser } from "store/slices/user/slice";
+import { CURRENT_USER_ID } from "config/config";
 
 interface Props {}
 const StartPage: FC<Props> = () => {
+  const currentUser = useAppSelector((state) => state.userReducer.currentUser);
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
   const ref = useRef<ITriangleDialog>(null);
-  const handleOpenDialog = useCallback(() => {
-    ref?.current?.show();
-  }, []);
+  const handleMainButtonClick = useCallback(() => {
+    if (currentUser) {
+      navigate("/wigwams");
+    } else {
+      dispatch(fetchUser(CURRENT_USER_ID));
+      ref?.current?.show();
+    }
+  }, [currentUser, dispatch, navigate]);
   const handleNavigate = useCallback(() => {
     navigate("./wigwams");
   }, [navigate]);
@@ -30,11 +40,11 @@ const StartPage: FC<Props> = () => {
       </Text>
       <Button
         view="contained"
-        onClick={handleOpenDialog}
+        onClick={handleMainButtonClick}
         className={styles.startPage__button}
       >
         <Text view="button" tag="span" color="primary">
-          {"Попробовать"}
+          {currentUser ? "К вигвамам" : "Попробовать"}
         </Text>
       </Button>
       <TriangleDialog ref={ref}>

@@ -115,7 +115,8 @@ const wigwamSlice = createSliceWithThunks({
   },
 });
 
-export const { getWigwams, setCurrentWigwam } = wigwamSlice.actions;
+export const { getWigwams, setCurrentWigwam, createWigwam, decimateWigwam } =
+  wigwamSlice.actions;
 export const { wigwamSelector } = wigwamSlice.selectors;
 
 export default wigwamSlice.reducer;

@@ -1,0 +1,10 @@
+@import "src/styles/mixins.scss";
+
+.defendPage {
+  @include centerFlex();
+  flex-direction: column;
+  height: 80vh;
+  &__text {
+    text-align: center;
+  }
+}

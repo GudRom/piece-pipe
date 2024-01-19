@@ -3,7 +3,9 @@ import { PatchWigwamDto } from "utils/types/dto/wigwam/PatchWigwamDto";
 import { PostWigwamDto } from "utils/types/dto/wigwam/PostWigwamDto";
 
 export async function getAllWigwams() {
-  const res = await fetch(`${urlConfig.BASE_URL}${urlConfig.WIGWAM}`);
+  const res = await fetch(
+    `${urlConfig.BASE_URL}${urlConfig.WIGWAM}?_sort=id&_order=desc`
+  );
   if (!res.ok) {
     throw new Error("Failed to get data");
   }
@@ -23,6 +25,9 @@ export async function getOnlyUsersWigwams(userId: number) {
 export async function postWigwam(data: PostWigwamDto) {
   const res = await fetch(`${urlConfig.BASE_URL}${urlConfig.WIGWAM}`, {
     method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
     body: JSON.stringify(data),
   });
   if (!res.ok) {
