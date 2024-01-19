@@ -7,11 +7,11 @@ import Text from "elements/Text";
 
 interface Props {
   user: IUserModel;
-  isList: boolean;
+  membersSongsCount?: number;
   className?: string;
 }
 
-const Avatar: FC<Props> = ({ user, isList, className }) => {
+const Avatar: FC<Props> = ({ user, className, membersSongsCount }) => {
   const avatarClass = classNames(className, styles.avatar);
   return (
     <div className={avatarClass}>
@@ -20,7 +20,7 @@ const Avatar: FC<Props> = ({ user, isList, className }) => {
         src={user.avatar ?? avatar}
         alt={user.name}
       />
-      {isList ? (
+      {membersSongsCount ? (
         <div className={styles.avatar__countBox}>
           <Text
             view={window.innerWidth < 400 ? "p-12" : "p-14"}
@@ -28,7 +28,7 @@ const Avatar: FC<Props> = ({ user, isList, className }) => {
             color="primary"
             weight="medium"
           >
-            {5}
+            {membersSongsCount}
           </Text>
         </div>
       ) : null}

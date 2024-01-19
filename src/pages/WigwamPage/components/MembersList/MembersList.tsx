@@ -4,6 +4,7 @@ import AddCircledIcon from "elements/icons/AddCircledIcon";
 import IconButton from "elements/buttons/IconButton";
 import { FC } from "react";
 import { IUserModel } from "utils/types/model/IUserModel";
+import { useAppSelector } from "store/hooks";
 
 interface Props {
   list: IUserModel[];
@@ -11,11 +12,22 @@ interface Props {
 }
 
 const MembersList: FC<Props> = ({ list, handleAddClick }) => {
+  const currentWigwam = useAppSelector(
+    (state) => state.wigwamReducer.currentWigwam
+  );
+
+  const getMembersSongsCount = (userId: number) => {
+    return currentWigwam?.songs.filter((song) => song.memberId === userId)
+      .length;
+  };
   return (
     <HorizontScroller>
-      {list.map((el) => (
-        <li key={el.id}>
-          <Avatar user={el} isList={true} />
+      {list.map((user) => (
+        <li key={user.id}>
+          <Avatar
+            user={user}
+            membersSongsCount={getMembersSongsCount(user.id)}
+          />
         </li>
       ))}
       <li>

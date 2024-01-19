@@ -1,4 +1,5 @@
 import {
+  PayloadAction,
   SerializedError,
   asyncThunkCreator,
   buildCreateSlice,
@@ -29,17 +30,22 @@ const wigwamSlice = createSliceWithThunks({
   name: "wigwam",
   initialState: wigwamInitState,
   selectors: {
-    wigwamsSelector: (state) => state,
+    wigwamSelector: (state) => state,
   },
   reducers: (create) => {
     const createAThunk = create.asyncThunk.withTypes<{
       rejectValue: { error: string };
     }>();
     return {
-      getWigwams: createAThunk<number, IWigwamModel[]>(
-        async (id, { rejectWithValue }) => {
+      setCurrentWigwam: create.reducer(
+        (state, action: PayloadAction<IWigwamModel>) => {
+          state.currentWigwam = action.payload;
+        }
+      ),
+      getWigwams: createAThunk<undefined, IWigwamModel[]>(
+        async (_, { rejectWithValue }) => {
           try {
-            return await getAllWigwams(id);
+            return await getAllWigwams();
           } catch (error) {
             rejectWithValue({ error: "Error" });
           }
@@ -109,7 +115,7 @@ const wigwamSlice = createSliceWithThunks({
   },
 });
 
-export const { getWigwams } = wigwamSlice.actions;
-export const { wigwamsSelector } = wigwamSlice.selectors;
+export const { getWigwams, setCurrentWigwam } = wigwamSlice.actions;
+export const { wigwamSelector } = wigwamSlice.selectors;
 
 export default wigwamSlice.reducer;

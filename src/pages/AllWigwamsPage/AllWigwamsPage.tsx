@@ -23,14 +23,28 @@ const AllWigwamsPage: FC<Props> = () => {
   const dispatch = useAppDispatch();
   const { wigwams } = useAppSelector((state) => state.wigwamReducer);
   const { invites } = useAppSelector((state) => state.inviteReducer);
+  const usersWigwams = wigwams.filter((wigwam) =>
+    wigwam.members.find((member) => member.id === 1)
+  );
   useEffect(() => {
-    dispatch(getWigwams(1));
+    // Promise.all([
+    //   dispatch(getWigwams(1)),
+    //   dispatch(fetchInvites({ type: "to", userId: 1 })),
+    // ]);
+    dispatch(getWigwams());
     dispatch(fetchInvites({ type: "to", userId: 1 }));
   }, [dispatch]);
 
   // const handleChange = (e: FormEvent<HTMLInputElement>) => {
   //   setText(e.currentTarget.value);
   // };
+
+  const handleDeny = useCallback(() => {
+    return;
+  }, []);
+  const handleConfirm = useCallback(() => {
+    return;
+  }, []);
   const submitHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     ref.current?.hide();
@@ -53,17 +67,21 @@ const AllWigwamsPage: FC<Props> = () => {
             <Invite
               key={invite.id}
               invite={invite}
-              hadnleDeny={() => {}}
-              handleConfirm={() => {}}
+              hadnleDeny={handleDeny}
+              handleConfirm={handleConfirm}
             />
           ))}
         </ListWithTitle>
       )}
-      <ListWithTitle title="Ваши вигвамы">
-        {wigwams.map((wigwam) => (
-          <Card key={wigwam.id} card={wigwam} navlink={`${wigwam.id}`} />
-        ))}
-      </ListWithTitle>
+      {usersWigwams.length > 0 ? (
+        <ListWithTitle title="Ваши вигвамы">
+          {usersWigwams.map((wigwam) => (
+            <Card key={wigwam.id} card={wigwam} navlink={`${wigwam.id}`} />
+          ))}
+        </ListWithTitle>
+      ) : (
+        <Text view="p-16">У вас пока нет вигвамов</Text>
+      )}
       <TriangleDialog ref={ref}>
         <form className={styles.wigwams__form} onSubmit={submitHandler}>
           <TextInput
