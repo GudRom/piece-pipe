@@ -17,13 +17,15 @@ interface Props {
 }
 
 const Header: FC<Props> = ({ setIsMenuOpen, isMenuOpen }) => {
-  const currentUser = useAppSelector((state) => state.userReducer.currentUser);
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+
+  const currentUser = useAppSelector((state) => state.userReducer.currentUser);
+  
   const authorize = useCallback(
     () => !currentUser && dispatch(fetchUser(CURRENT_USER_ID)),
     [dispatch, currentUser]
   );
-  const navigate = useNavigate();
   return (
     <header className={styles.header}>
       <IconButton
