@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector } from "store/hooks";
 import SongList from "../SongList";
 import Text from "elements/Text";
 import styles from "../../SearchPage.module.scss";
+import Loader from "elements/Loader";
 
 interface Props {}
 
@@ -33,17 +34,22 @@ const SongSearch: FC<Props> = () => {
   return (
     <>
       <Search handleForm={handleForm} setText={handleInput} text={text} />
-      <Text view="p-18" className={styles.search__searchTitle}>
-        Результат поиска:
-      </Text>
+
       {loading ? (
-        <Text view="p-14">Loading...</Text>
-      ) : songs.length > 0 ? (
-        <SongList songs={songs} addedSongsIds={addedSongsIds} />
+        <Loader className={styles.search__loader} />
       ) : (
-        <Text view="p-14">
-          Поиск не дал результатов <span>&#129302;</span>
-        </Text>
+        <>
+          <Text view="p-18" className={styles.search__searchTitle}>
+            Результат поиска:
+          </Text>
+          {songs.length > 0 ? (
+            <SongList songs={songs} addedSongsIds={addedSongsIds} />
+          ) : (
+            <Text view="p-14">
+              Поиск не дал результатов <span>&#129302;</span>
+            </Text>
+          )}
+        </>
       )}
     </>
   );

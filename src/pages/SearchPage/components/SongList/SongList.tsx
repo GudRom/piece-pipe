@@ -1,10 +1,6 @@
 import SongCard from "components/SongCard";
-import { FC } from "react";
+import { FC, useCallback, useState } from "react";
 import styles from "./SongList.module.scss";
-import IconButton from "elements/buttons/IconButton";
-import MainCrossIcon from "elements/icons/MainCrossIcon";
-import CheckmarkIcon from "elements/icons/CheckmarkIcon";
-import PlusIcon from "elements/icons/PlusIcon";
 import Button from "elements/buttons/Button";
 import Text from "elements/Text";
 import { MAX_SONGS_FOR_SLICE } from "config/config";
@@ -13,6 +9,7 @@ import { ISongModel } from "utils/types/model/ISongModel";
 import { useAppDispatch, useAppSelector } from "store/hooks";
 import { updateWigwam } from "store/slices/wigwam/slice";
 import { PatchWigwamDto } from "utils/types/dto/wigwam/PatchWigwamDto";
+// import ActionSlotCard from "./components/ActionSlotCard";
 
 interface Props {
   songs: ISongModel[];
@@ -21,6 +18,7 @@ interface Props {
 
 const SongList: FC<Props> = ({ songs, addedSongsIds }) => {
   const { currentSlice, getMore, getLess } = useSlice();
+  const [currentSongId, setCurrentSongId] = useState<number | null>(null);
 
   const dispatch = useAppDispatch();
 
@@ -29,55 +27,43 @@ const SongList: FC<Props> = ({ songs, addedSongsIds }) => {
   );
   const { currentUser } = useAppSelector((state) => state.userReducer);
 
-  const handleAddSong = (song: ISongModel) => {
-    if (currentWigwam && currentUser) {
-      const dto: PatchWigwamDto = {
-        id: currentWigwam?.id,
-        songs: [...currentWigwam.songs, { memberId: currentUser.id, song }],
-      };
-      dispatch(updateWigwam(dto));
-    }
-  };
-  const handleRemoveSong = (id: number) => {
-    if (currentWigwam && currentUser) {
-      const dto: PatchWigwamDto = {
-        id: currentWigwam?.id,
-        songs: currentWigwam.songs.filter((song) => song.song.id !== id),
-      };
-      dispatch(updateWigwam(dto));
-    }
-  };
+  const handleAddSong = useCallback(
+    (song: ISongModel) => {
+      if (currentWigwam && currentUser) {
+        const dto: PatchWigwamDto = {
+          id: currentWigwam?.id,
+          songs: [...currentWigwam.songs, { memberId: currentUser.id, song }],
+        };
+        setCurrentSongId(song.id);
+        dispatch(updateWigwam(dto));
+      }
+    },
+    [currentUser, currentWigwam, dispatch]
+  );
+  const handleRemoveSong = useCallback(
+    (id: number) => {
+      if (currentWigwam && currentUser) {
+        const dto: PatchWigwamDto = {
+          id: currentWigwam?.id,
+          songs: currentWigwam.songs.filter((song) => song.song.id !== id),
+        };
+        setCurrentSongId(id);
+        dispatch(updateWigwam(dto));
+      }
+    },
+    [currentUser, currentWigwam, dispatch]
+  );
   return (
     <ul className={styles.list}>
       {songs.slice(0, currentSlice).map((song) => (
         <SongCard
           song={song}
           key={song.id}
-          actionSlot={
-            addedSongsIds !== undefined ? (
-              <>
-                {addedSongsIds.includes(song.id) ? (
-                  <IconButton disabled>
-                    <CheckmarkIcon color="primary" />
-                  </IconButton>
-                ) : (
-                  <IconButton
-                    onClick={() => handleAddSong(song)}
-                    disabled={loading}
-                  >
-                    <PlusIcon width={15} height={15} />
-                  </IconButton>
-                )}
-              </>
-            ) : (
-              <IconButton
-                onClick={() => handleRemoveSong(song.id)}
-                disabled={loading}
-              >
-                <MainCrossIcon color="accent" />
-              </IconButton>
-            )
-          }
+          loading={loading && currentSongId === song.id}
+          handleAddSong={handleAddSong}
+          handleRemoveSong={handleRemoveSong}
+          addedSongsIds={addedSongsIds}
+          withActionSlot={true}
         />
       ))}
       {songs.length > MAX_SONGS_FOR_SLICE &&
