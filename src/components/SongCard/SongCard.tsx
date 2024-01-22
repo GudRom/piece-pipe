@@ -13,9 +13,9 @@ interface Props {
   withActionSlot?: boolean;
   tag?: "div" | "li";
   addedSongsIds?: number[];
-  loading: boolean;
-  handleAddSong: (x: ISongModel) => void;
-  handleRemoveSong: (x: number) => void;
+  loading?: boolean;
+  handleAddSong?: (x: ISongModel) => void;
+  handleRemoveSong?: (x: number) => void;
 }
 
 const SongCard: FC<Props> = ({
@@ -23,7 +23,7 @@ const SongCard: FC<Props> = ({
   withActionSlot = false,
   tag,
   addedSongsIds,
-  loading,
+  loading = false,
   handleAddSong,
   handleRemoveSong,
 }) => {
@@ -38,7 +38,7 @@ const SongCard: FC<Props> = ({
             maxLines={1}
             weight="medium"
           >{`${song.artist} - ${song.name}`}</Text>
-          {withActionSlot ? (
+          {withActionSlot && handleAddSong && handleRemoveSong ? (
             <>
               {addedSongsIds !== undefined ? (
                 <>
