@@ -19,6 +19,7 @@ const Avatar: FC<Props> = ({ user, className, membersSongsCount }) => {
         className={styles.avatar__img}
         src={user.avatar ?? avatar}
         alt={user.name}
+        loading="lazy"
       />
       {membersSongsCount ? (
         <div className={styles.avatar__countBox}>

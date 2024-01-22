@@ -1,32 +1,35 @@
+import { Suspense, useState, lazy } from "react";
 import { Outlet, Route, Routes } from "react-router-dom";
 import "./App.scss";
-import StartPage from "pages/StartPage";
+import LoadingFallback from "components/LoadingFallback";
 import Header from "components/Header";
-import SearchPage from "pages/SearchPage";
-import AllWigwamsPage from "pages/AllWigwamsPage";
-import WigwamPage from "pages/WigwamPage";
-import { useState } from "react";
-import Menu from "components/Menu";
-import DefendPage from "pages/DefendPage";
-import RequireAuth from "components/RequireAuth";
+const StartPage = lazy(() => import("pages/StartPage"));
+const SearchPage = lazy(() => import("pages/SearchPage"));
+const AllWigwamsPage = lazy(() => import("pages/AllWigwamsPage"));
+const WigwamPage = lazy(() => import("pages/WigwamPage"));
+const DefendPage = lazy(() => import("pages/DefendPage"));
+const RequireAuth = lazy(() => import("components/RequireAuth"));
+const Menu = lazy(() => import("components/Menu"));
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <>
       <Header setIsMenuOpen={setIsMenuOpen} isMenuOpen={isMenuOpen} />
-      <Routes>
-        <Route path="/" element={<StartPage />} />
-        <Route path="/" element={<RequireAuth element={<Outlet />} />}>
-          <Route path="/wigwams">
-            <Route index element={<AllWigwamsPage />} />
-            <Route path=":id" element={<WigwamPage />} />
+      <Suspense fallback={<LoadingFallback />}>
+        <Routes>
+          <Route path="/" element={<StartPage />} />
+          <Route path="/" element={<RequireAuth element={<Outlet />} />}>
+            <Route path="/wigwams">
+              <Route index element={<AllWigwamsPage />} />
+              <Route path=":id" element={<WigwamPage />} />
+            </Route>
+            <Route path="/search" element={<SearchPage />} />
           </Route>
-          <Route path="/search" element={<SearchPage />} />
-        </Route>
-        <Route path="/defend" element={<DefendPage />} />
-      </Routes>
-      <Menu isOpen={isMenuOpen} />
+          <Route path="/defend" element={<DefendPage />} />
+        </Routes>
+        <Menu isOpen={isMenuOpen} />
+      </Suspense>
     </>
   );
 }

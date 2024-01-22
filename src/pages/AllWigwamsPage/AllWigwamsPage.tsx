@@ -28,11 +28,17 @@ const AllWigwamsPage: FC<Props> = () => {
   const { wigwams } = useAppSelector((state) => state.wigwamReducer);
   const { invites } = useAppSelector((state) => state.inviteReducer);
   const currentUser = useAppSelector((state) => state.userReducer.currentUser);
+  
+  const loadWigwams = useCallback(() => dispatch(getWigwams()), [dispatch]);
+  const getInvites = useCallback(
+    () => dispatch(fetchInvites({ type: "to", userId: currentUser!.id })),
+    [currentUser, dispatch]
+  );
 
   useEffect(() => {
-    dispatch(getWigwams());
-    dispatch(fetchInvites({ type: "to", userId: currentUser!.id }));
-  }, [currentUser, dispatch]);
+    loadWigwams();
+    getInvites();
+  }, [getInvites, loadWigwams]);
 
   const handleOpenDialog = useCallback(() => {
     ref?.current?.show();

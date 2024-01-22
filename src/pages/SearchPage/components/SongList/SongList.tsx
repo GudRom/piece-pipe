@@ -9,7 +9,6 @@ import { ISongModel } from "utils/types/model/ISongModel";
 import { useAppDispatch, useAppSelector } from "store/hooks";
 import { updateWigwam } from "store/slices/wigwam/slice";
 import { PatchWigwamDto } from "utils/types/dto/wigwam/PatchWigwamDto";
-// import ActionSlotCard from "./components/ActionSlotCard";
 
 interface Props {
   songs: ISongModel[];
