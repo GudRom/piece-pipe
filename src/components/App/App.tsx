@@ -3,13 +3,13 @@ import { Outlet, Route, Routes } from "react-router-dom";
 import "./App.scss";
 import LoadingFallback from "components/LoadingFallback";
 import Header from "components/Header";
+import Menu from "components/Menu";
 const StartPage = lazy(() => import("pages/StartPage"));
 const SearchPage = lazy(() => import("pages/SearchPage"));
 const AllWigwamsPage = lazy(() => import("pages/AllWigwamsPage"));
 const WigwamPage = lazy(() => import("pages/WigwamPage"));
 const DefendPage = lazy(() => import("pages/DefendPage"));
 const RequireAuth = lazy(() => import("components/RequireAuth"));
-const Menu = lazy(() => import("components/Menu"));
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,8 +28,8 @@ function App() {
           </Route>
           <Route path="/defend" element={<DefendPage />} />
         </Routes>
-        <Menu isOpen={isMenuOpen} />
       </Suspense>
+      <Menu isOpen={isMenuOpen} closeMenu={() => setIsMenuOpen(false)} />
     </>
   );
 }

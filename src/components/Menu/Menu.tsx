@@ -7,9 +7,10 @@ import { NavLink } from "react-router-dom";
 import styles from "./Menu.module.scss";
 interface Props {
   isOpen: boolean;
+  closeMenu: () => void;
 }
 
-const Menu: FC<Props> = ({ isOpen }) => {
+const Menu: FC<Props> = ({ isOpen, closeMenu }) => {
   return (
     <Sidebar isOpen={isOpen}>
       <div className={styles.menu}>
@@ -19,6 +20,7 @@ const Menu: FC<Props> = ({ isOpen }) => {
               <NavLink
                 to={el.link}
                 className={styles.menu__navlink}
+                onClick={closeMenu}
                 style={({ isActive }) => {
                   return { textDecoration: isActive ? "underline" : "none" };
                 }}
