@@ -1,27 +1,21 @@
 import IconButton from "elements/buttons/IconButton";
 import SearchIcon from "elements/icons/SearchIcon";
 import TextInput from "elements/TextInput/TextInput";
-import { FC, FormEvent, useCallback, useState } from "react";
+import { FC, FormEvent, memo } from "react";
 import styles from "./Search.module.scss";
 
-interface Props {}
+interface Props {
+  handleForm: (e: FormEvent) => void;
+  setText: (value: string) => void;
+  text: string;
+}
 
-const Search: FC<Props> = () => {
-  const [text, setText] = useState("");
-  
-  const handleInput = useCallback((value: string) => {
-    setText(value);
-  }, []);
-
-  const handleForm = useCallback((e: FormEvent) => {
-    e.preventDefault();
-    setText("");
-  }, []);
+const Search: FC<Props> = ({ handleForm, text, setText }) => {
   return (
     <form onSubmit={handleForm} className={styles.form}>
       <TextInput
         value={text}
-        onChange={handleInput}
+        onChange={setText}
         variant={"outlined"}
         placeholder="Найти песню..."
       />
@@ -32,4 +26,4 @@ const Search: FC<Props> = () => {
   );
 };
 
-export default Search;
+export default memo(Search);

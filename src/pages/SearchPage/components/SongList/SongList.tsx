@@ -1,6 +1,5 @@
 import SongCard from "components/SongCard";
 import { FC } from "react";
-import { Song } from "utils/types/model/IWigwamModel";
 import styles from "./SongList.module.scss";
 import IconButton from "elements/buttons/IconButton";
 import MainCrossIcon from "elements/icons/MainCrossIcon";
@@ -10,24 +9,25 @@ import Button from "elements/buttons/Button";
 import Text from "elements/Text";
 import { MAX_SONGS_FOR_SLICE } from "config/config";
 import { useSlice } from "hooks/useSlice";
+import { ISongModel } from "utils/types/model/ISongModel";
 
 interface Props {
-  songs: Song[];
-  currentMemberId?: number;
+  songs: ISongModel[];
+  addedSongsIds?: number[];
 }
 
-const SongList: FC<Props> = ({ songs, currentMemberId }) => {
+const SongList: FC<Props> = ({ songs, addedSongsIds }) => {
   const { currentSlice, getMore, getLess } = useSlice();
   return (
     <ul className={styles.list}>
       {songs.slice(0, currentSlice).map((song) => (
         <SongCard
-          song={song.song}
-          key={song.song.id}
+          song={song}
+          key={song.id}
           actionSlot={
-            currentMemberId ? (
+            addedSongsIds !== undefined ? (
               <>
-                {song.memberId === currentMemberId ? (
+                {addedSongsIds.includes(song.id) ? (
                   <IconButton>
                     <CheckmarkIcon color="primary" />
                   </IconButton>
