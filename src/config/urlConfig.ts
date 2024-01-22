@@ -1,5 +1,5 @@
 export const urlConfig = {
-  BASE_URL: "http://localhost:3001",
+  BASE_URL: "https://m48pl2-8080.csb.app",
   WIGWAM: "/wigwams",
   USER: "/users",
   SONG: "/songs",
