@@ -11,12 +11,15 @@ import { useNavigate } from "react-router-dom";
 import TriangleDialog, { ITriangleDialog } from "elements/TriangleDialog";
 import Snackbar, { ISnackbar } from "elements/Snackbar";
 import MembersList from "./components/MembersList";
-import { useAppSelector } from "store/hooks";
+import { useAppDispatch, useAppSelector } from "store/hooks";
+import { decimateWigwam } from "store/slices/wigwam/slice";
+import { urlConfig } from "config/urlConfig";
 
 interface Props {}
 
 const WigwamPage: FC<Props> = () => {
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
 
   const ref = useRef<ITriangleDialog>(null);
   const inviteRef = useRef<ITriangleDialog>(null);
@@ -35,10 +38,16 @@ const WigwamPage: FC<Props> = () => {
   const handleOpenSnackbar = useCallback(() => {
     snackbarRef?.current?.show();
   }, []);
-  
+
   const handleAddClick = useCallback(() => {
     inviteRef?.current?.show();
   }, []);
+
+  const deleteWigwam = (id: number) => {
+    handleCloseDialog();
+    dispatch(decimateWigwam(id));
+    navigate(urlConfig.WIGWAM);
+  };
 
   if (!currentWigwam) return null;
 
@@ -49,7 +58,13 @@ const WigwamPage: FC<Props> = () => {
         <IconButton text="слушать" onClick={handleOpenSnackbar}>
           <VynilIcon width={48} height={40} />
         </IconButton>
-        <Text view="title" className={styles.wigwam__header__title} maxLines={2}>{name}</Text>
+        <Text
+          view="title"
+          className={styles.wigwam__header__title}
+          maxLines={2}
+        >
+          {name}
+        </Text>
         <IconButton text="сжечь" onClick={handleOpenDeleteDialog}>
           <DeleteWigwam width={40} height={40} />
         </IconButton>
@@ -78,7 +93,10 @@ const WigwamPage: FC<Props> = () => {
         <Text view="p-18" color="primary" className={styles.wigwam__dialogText}>
           Подтвердите удаление
         </Text>
-        <Button view={"contained"} onClick={handleCloseDialog}>
+        <Button
+          view={"contained"}
+          onClick={() => deleteWigwam(currentWigwam.id)}
+        >
           <Text view="button" color="primary">
             Удалить
           </Text>
