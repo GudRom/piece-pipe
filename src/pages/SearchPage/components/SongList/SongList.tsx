@@ -10,6 +10,9 @@ import Text from "elements/Text";
 import { MAX_SONGS_FOR_SLICE } from "config/config";
 import { useSlice } from "hooks/useSlice";
 import { ISongModel } from "utils/types/model/ISongModel";
+import { useAppDispatch, useAppSelector } from "store/hooks";
+import { updateWigwam } from "store/slices/wigwam/slice";
+import { PatchWigwamDto } from "utils/types/dto/wigwam/PatchWigwamDto";
 
 interface Props {
   songs: ISongModel[];
@@ -18,6 +21,32 @@ interface Props {
 
 const SongList: FC<Props> = ({ songs, addedSongsIds }) => {
   const { currentSlice, getMore, getLess } = useSlice();
+
+  const dispatch = useAppDispatch();
+
+  const { currentWigwam, loading } = useAppSelector(
+    (state) => state.wigwamReducer
+  );
+  const { currentUser } = useAppSelector((state) => state.userReducer);
+
+  const handleAddSong = (song: ISongModel) => {
+    if (currentWigwam && currentUser) {
+      const dto: PatchWigwamDto = {
+        id: currentWigwam?.id,
+        songs: [...currentWigwam.songs, { memberId: currentUser.id, song }],
+      };
+      dispatch(updateWigwam(dto));
+    }
+  };
+  const handleRemoveSong = (id: number) => {
+    if (currentWigwam && currentUser) {
+      const dto: PatchWigwamDto = {
+        id: currentWigwam?.id,
+        songs: currentWigwam.songs.filter((song) => song.song.id !== id),
+      };
+      dispatch(updateWigwam(dto));
+    }
+  };
   return (
     <ul className={styles.list}>
       {songs.slice(0, currentSlice).map((song) => (
@@ -28,17 +57,23 @@ const SongList: FC<Props> = ({ songs, addedSongsIds }) => {
             addedSongsIds !== undefined ? (
               <>
                 {addedSongsIds.includes(song.id) ? (
-                  <IconButton>
+                  <IconButton disabled>
                     <CheckmarkIcon color="primary" />
                   </IconButton>
                 ) : (
-                  <IconButton>
+                  <IconButton
+                    onClick={() => handleAddSong(song)}
+                    disabled={loading}
+                  >
                     <PlusIcon width={15} height={15} />
                   </IconButton>
                 )}
               </>
             ) : (
-              <IconButton>
+              <IconButton
+                onClick={() => handleRemoveSong(song.id)}
+                disabled={loading}
+              >
                 <MainCrossIcon color="accent" />
               </IconButton>
             )

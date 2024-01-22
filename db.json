@@ -756,6 +756,15 @@
             "artist": "Queen",
             "duration": 367
           }
+        },
+        {
+          "memberId": 1,
+          "song": {
+            "id": 10,
+            "name": "Closer",
+            "artist": "The Chainsmokers ft. Halsey",
+            "duration": 244
+          }
         }
       ],
       "members": [

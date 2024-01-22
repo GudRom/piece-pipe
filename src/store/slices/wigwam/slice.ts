@@ -5,8 +5,14 @@ import {
   buildCreateSlice,
 } from "@reduxjs/toolkit";
 import { PostWigwamDto } from "utils/types/dto/wigwam/PostWigwamDto";
-import { deleteWigwam, getAllWigwams, postWigwam } from "utils/api/wigwamApi";
+import {
+  deleteWigwam,
+  getAllWigwams,
+  patchWigwam,
+  postWigwam,
+} from "utils/api/wigwamApi";
 import { IWigwamModel } from "utils/types/model/IWigwamModel";
+import { PatchWigwamDto } from "utils/types/dto/wigwam/PatchWigwamDto";
 
 type WigwamState = {
   wigwams: IWigwamModel[];
@@ -111,12 +117,44 @@ const wigwamSlice = createSliceWithThunks({
           },
         }
       ),
+      updateWigwam: createAThunk<PatchWigwamDto, IWigwamModel>(
+        async (dto, { rejectWithValue }) => {
+          try {
+            return await patchWigwam(dto);
+          } catch (error) {
+            rejectWithValue({ error: "Error" });
+          }
+        },
+        {
+          pending: (state) => {
+            state.error = null;
+            state.loading = true;
+          },
+          fulfilled: (state, action) => {
+            state.currentWigwam = action.payload;
+            state.wigwams = state.wigwams.map((wigwam) =>
+              wigwam.id === action.payload.id ? action.payload : wigwam
+            );
+          },
+          rejected: (state, action) => {
+            state.error = action.error;
+          },
+          settled: (state) => {
+            state.loading = false;
+          },
+        }
+      ),
     };
   },
 });
 
-export const { getWigwams, setCurrentWigwam, createWigwam, decimateWigwam } =
-  wigwamSlice.actions;
+export const {
+  getWigwams,
+  setCurrentWigwam,
+  createWigwam,
+  decimateWigwam,
+  updateWigwam,
+} = wigwamSlice.actions;
 export const { wigwamSelector } = wigwamSlice.selectors;
 
 export default wigwamSlice.reducer;

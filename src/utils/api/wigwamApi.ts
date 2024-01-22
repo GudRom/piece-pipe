@@ -36,11 +36,17 @@ export async function postWigwam(data: PostWigwamDto) {
   return res.json();
 }
 
-export async function patchWigwam(data: PatchWigwamDto, id: number) {
-  const res = await fetch(`${urlConfig.BASE_URL}${urlConfig.WIGWAM}/${id}`, {
-    method: "PATCH",
-    body: JSON.stringify(data),
-  });
+export async function patchWigwam(data: PatchWigwamDto) {
+  const res = await fetch(
+    `${urlConfig.BASE_URL}${urlConfig.WIGWAM}/${data.id}`,
+    {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }
+  );
   if (!res.ok) {
     throw new Error("Failed to patch data");
   }

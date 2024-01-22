@@ -1,14 +1,10 @@
 import { IUserModel } from "utils/types/model/IUserModel";
-import { ISongModel } from "utils/types/model/ISongModel";
+import { Song } from "utils/types/model/IWigwamModel";
 
 export interface PatchWigwamDto {
+  id: number;
   name?: string;
   maxSongForMember?: number;
-  songs?: [
-    {
-      memberId: number;
-      song: ISongModel;
-    }
-  ];
+  songs?: Song[];
   members?: IUserModel[];
 }
