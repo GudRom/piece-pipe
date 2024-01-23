@@ -14,21 +14,20 @@ import Invite from "components/Invite";
 import { fetchInvites } from "store/slices/invite/slice";
 import { PostWigwamDto } from "utils/types/dto/wigwam/PostWigwamDto";
 import { MAX_SONGS_FOR_MEMBER } from "config/config";
-import Snackbar, { ISnackbar } from "elements/Snackbar";
 
 interface Props {}
 const AllWigwamsPage: FC<Props> = () => {
   const [text, setText] = useState("");
+  const [isTextError, setIsTextError] = useState(false);
 
   const dispatch = useAppDispatch();
 
   const ref = useRef<ITriangleDialog>(null);
-  const snackbarRef = useRef<ISnackbar>(null);
 
   const { wigwams } = useAppSelector((state) => state.wigwamReducer);
   const { invites } = useAppSelector((state) => state.inviteReducer);
   const currentUser = useAppSelector((state) => state.userReducer.currentUser);
-  
+
   const loadWigwams = useCallback(() => dispatch(getWigwams()), [dispatch]);
   const getInvites = useCallback(
     () => dispatch(fetchInvites({ type: "to", userId: currentUser!.id })),
@@ -65,12 +64,13 @@ const AllWigwamsPage: FC<Props> = () => {
       songs: [],
       members: [currentUser!],
     };
-    if (text) {
+    if (text.trim()) {
+      setIsTextError(false);
       dispatch(createWigwam(dto));
       ref.current?.hide();
       setText("");
     } else {
-      snackbarRef.current?.show();
+      setIsTextError(true);
     }
   };
 
@@ -113,7 +113,18 @@ const AllWigwamsPage: FC<Props> = () => {
             onChange={setText}
             variant={"standard"}
             placeholder="Название"
+            required
+            onFocus={() => setIsTextError(false)}
           />
+          {isTextError && (
+            <Text
+              view="p-12"
+              color="extra"
+              className={styles.wigwams__form__error}
+            >
+              Это поле надо заполнить
+            </Text>
+          )}
           <Button
             view="contained"
             type="submit"
@@ -125,11 +136,6 @@ const AllWigwamsPage: FC<Props> = () => {
           </Button>
         </form>
       </TriangleDialog>
-      <Snackbar ref={snackbarRef}>
-        <Text view="p-12" color="primary" tag="span">
-          Это поле обязательное
-        </Text>
-      </Snackbar>
     </section>
   );
 };
