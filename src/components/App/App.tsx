@@ -4,6 +4,7 @@ import "./App.scss";
 import LoadingFallback from "components/LoadingFallback";
 import Header from "components/Header";
 import Menu from "components/Menu";
+import BigScreenFallback from "components/BigScreenFallback";
 const StartPage = lazy(() => import("pages/StartPage"));
 const SearchPage = lazy(() => import("pages/SearchPage"));
 const AllWigwamsPage = lazy(() => import("pages/AllWigwamsPage"));
@@ -13,6 +14,7 @@ const RequireAuth = lazy(() => import("components/RequireAuth"));
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  if (window.innerWidth > 500) return <BigScreenFallback />;
   return (
     <>
       <Header setIsMenuOpen={setIsMenuOpen} isMenuOpen={isMenuOpen} />
