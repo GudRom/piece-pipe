@@ -7,7 +7,7 @@ type Props = PropsWithChildren & {
 
 const Sidebar: FC<Props> = ({ isOpen, children }) => {
   const sidebarClass = classNames(styles.sidebar, {
-    [styles.sidebar_visible]: isOpen,
+    ["visible"]: isOpen,
   });
   return <div className={sidebarClass}>{children}</div>;
 };
