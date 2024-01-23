@@ -35,11 +35,13 @@ const userSlice = createSliceWithThunks({
     return {
       fetchUser: createAThunk<number, IUserModel>(
         async (id, { rejectWithValue }) => {
-          try {
-            return await getCurrentUser(id);
-          } catch (error) {
-            rejectWithValue({ error: "Error" });
+          const res = await getCurrentUser(id);
+
+          if (!res.ok) {
+            return rejectWithValue({ error: res.statusText });
           }
+
+          return (await res.json()) as IUserModel;
         },
         {
           pending: (state) => {

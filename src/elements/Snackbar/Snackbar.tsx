@@ -19,10 +19,7 @@ interface Props {
   children: ReactNode;
 }
 
-const Snackbar = forwardRef<ISnackbar, Props>(function TriangleDialog(
-  { children },
-  ref
-) {
+const Snackbar = forwardRef<ISnackbar, Props>(({ children }, ref) => {
   const [isClosing, setIsClosing] = useState(false);
   const dialogRef = useRef<HTMLDialogElement>(null);
 
