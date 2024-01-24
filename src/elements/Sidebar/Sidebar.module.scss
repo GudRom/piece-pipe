@@ -3,7 +3,7 @@
 .sidebar {
   width: 100%;
   max-width: 450px;
-  height: calc(100vh - 63px);
+  height: calc(100dvh - 63px);
   background-color: $almostwhite;
   visibility: hidden;
   position: fixed;
