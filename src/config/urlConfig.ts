@@ -4,4 +4,13 @@ export const urlConfig = {
   USER: "/users",
   SONG: "/songs",
   INVITE: "/invites",
+  SEARCH: "/search",
+};
+
+export const routesConfig = {
+  WIGWAM: "/wigwams",
+  SONG: "/songs",
+  SEARCH: "/search",
+  FRIENDS: "/friends",
+  DEFEND: "/defend",
 };

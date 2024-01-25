@@ -13,7 +13,7 @@ import Snackbar, { ISnackbar } from "elements/Snackbar";
 import MembersList from "./components/MembersList";
 import { useAppDispatch, useAppSelector } from "store/hooks";
 import { decimateWigwam } from "store/slices/wigwam/slice";
-import { urlConfig } from "config/urlConfig";
+import { routesConfig } from "config/urlConfig";
 
 interface Props {}
 
@@ -46,7 +46,7 @@ const WigwamPage: FC<Props> = () => {
   const deleteWigwam = (id: number) => {
     handleCloseDialog();
     dispatch(decimateWigwam(id));
-    navigate(urlConfig.WIGWAM);
+    navigate(routesConfig.WIGWAM);
   };
 
   if (!currentWigwam) return null;
@@ -82,7 +82,7 @@ const WigwamPage: FC<Props> = () => {
       <Button
         view={"contained"}
         className={styles.wigwam__btn}
-        onClick={() => navigate("/search")}
+        onClick={() => navigate(routesConfig.SEARCH)}
       >
         <Text view="button" color="primary">
           Добавить
